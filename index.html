@@ -223,6 +223,77 @@
   footer ul li a:hover{color:var(--brass-2)}
   .foot-bottom{max-width:1440px;margin:0 auto;padding-top:32px;border-top:1px solid var(--line-cream);display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,238,227,0.5)}
 
+
+  /* ========== MOBILE (phones) ========== */
+  @media (max-width: 640px){
+    /* general spacing */
+    section, .manifesto, .coverage, .cta, .service, .hero, .hero-ticker{padding-left:18px !important;padding-right:18px !important}
+    .wrap{padding:0}
+    /* nav */
+    .nav{padding:14px 18px}
+    .nav-logo,.nav-mark{font-size:14px}
+    .nav-cta{padding:10px 14px;font-size:11px}
+    /* hero */
+    .hero{padding-top:90px;padding-bottom:40px;min-height:auto}
+    .hero-grid{gap:40px}
+    .hero h1, .hero-title{font-size:40px !important;line-height:1.05}
+    .hero p, .hero-sub{font-size:15px}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:18px}
+    /* TEAM stack: stop the rotated overlapping look on phone, stack vertically */
+    .pros-stack{height:auto;max-width:340px;margin:0 auto;display:flex;flex-direction:column;gap:16px;position:static}
+    .pros-stack .pro-card{position:static;width:100%;transform:none !important;padding:16px}
+    .pros-stack .pro-card:nth-child(1),
+    .pros-stack .pro-card:nth-child(2),
+    .pros-stack .pro-card:nth-child(3){position:static;top:auto;left:auto;transform:none}
+    .pros-stack .pro-card:nth-child(2){border:1.5px solid var(--brass)}
+    .pro-portrait{aspect-ratio:1/1}
+    .pro-name{font-size:22px}
+    .pro-role{font-size:11px}
+    /* TEAM detail grid */
+    .pros-grid{grid-template-columns:1fr;gap:24px;max-width:360px;margin:0 auto}
+    .pro-detail-img{aspect-ratio:1/1}
+    .pro-detail-name{font-size:28px}
+    .pro-detail-body{padding:22px}
+    .pro-bio{font-size:14px;line-height:1.5}
+    /* Section heads + titles */
+    .section-title{font-size:30px !important;line-height:1.1}
+    .section-label{font-size:10px}
+    /* HOTELS list */
+    .hotels-grid{grid-template-columns:1fr;gap:18px}
+    .hotel{grid-template-columns:1fr;padding:0}
+    .hotel-img{height:200px;aspect-ratio:auto}
+    .hotel-body{padding:18px}
+    .hotel-name{font-size:20px}
+    .hotel-meta{font-size:11px;flex-wrap:wrap;gap:6px}
+    .hotel-fac{font-size:13px}
+    .hotel-row{flex-wrap:wrap;gap:10px}
+    /* MANIFESTO */
+    .manifesto{padding:60px 18px}
+    .manifesto-quote{font-size:22px;line-height:1.35}
+    .manifesto-meta{flex-direction:column;align-items:flex-start;gap:10px}
+    /* SERVICE / COVERAGE / TRUST */
+    .service-grid,.coverage-grid{grid-template-columns:1fr;gap:32px}
+    .trust-grid{grid-template-columns:1fr 1fr;gap:18px}
+    .trust-item .n{font-size:36px}
+    /* CTA form */
+    .cta h2{font-size:28px;line-height:1.1}
+    .cta p{font-size:14px}
+    .cta-form{grid-template-columns:1fr;gap:14px}
+    .cta-form input,.cta-form select,.cta-form textarea{font-size:16px;padding:12px}
+    .btn{padding:14px 18px;font-size:13px;width:100%;justify-content:center;display:inline-flex}
+    /* FOOTER */
+    .foot-grid{grid-template-columns:1fr;gap:28px}
+    .foot-bottom{flex-direction:column;gap:10px;text-align:center}
+    /* ticker */
+    .hero-ticker{flex-direction:column;gap:8px;padding:14px 18px;font-size:10px;text-align:center}
+    /* prevent horizontal scroll */
+    body{overflow-x:hidden}
+    img{max-width:100%;height:auto}
+  }
+
+  /* highlight CEO card in middle position */
+  .pros-stack .pro-card:nth-child(2){box-shadow:0 16px 40px rgba(212,168,87,0.12)}
+
   /* ========== RESPONSIVE ========== */
   @media (max-width: 1024px){
     .hero-grid{grid-template-columns:1fr;gap:60px}
@@ -276,19 +347,19 @@
     </div>
     <div class="pros-stack">
       <article class="pro-card">
-        <div class="pro-portrait" style="background:url('./team-laurent.jpg') center/cover no-repeat"></div>
-        <div class="pro-name">Laurent Lassier</div>
-        <div class="pro-role">Senior Broker · France</div>
-      </article>
-      <article class="pro-card">
         <div class="pro-portrait" style="background:url('./team-julio.jpg') center/cover no-repeat"></div>
         <div class="pro-name">Julio C. Marulanda</div>
         <div class="pro-role">Business Partner · Iberia</div>
       </article>
       <article class="pro-card">
+        <div class="pro-portrait" style="background:url('./team-laurent.jpg') center/cover no-repeat"></div>
+        <div class="pro-name">Laurent Lassier</div>
+        <div class="pro-role">Owner &amp; C.E.O.</div>
+      </article>
+      <article class="pro-card">
         <div class="pro-portrait" style="background:url('./team-iulian.jpg') center/cover no-repeat"></div>
         <div class="pro-name">Iulian Racanel</div>
-        <div class="pro-role">Business Partner · DACH & MENA</div>
+        <div class="pro-role">Business Partner · DACH &amp; MENA</div>
       </article>
     </div>
   </div>
@@ -322,21 +393,6 @@
 
     <div class="pros-grid">
       <article class="pro-detail">
-        <div class="pro-detail-img" style="background:url('./team-laurent.jpg') center/cover no-repeat">
-          <span class="badge">Owner & C.E.O.</span>
-        </div>
-        <div class="pro-detail-body">
-          <div class="pro-detail-name">Laurent Lassier</div>
-          <div class="pro-detail-role">Owner & C.E.O.</div>
-          <p class="pro-bio">25 years of experience in all operational fields of hospitality and F&amp;B. Expert in sales, acquisitions and transactions, operator search, repositioning and asset management.</p>
-          <div class="pro-stats">
-            <div><div class="n">25y</div><div class="l">Experience</div></div>
-            <div><div class="n" style="font-size:14px;letter-spacing:0"><a href="/cdn-cgi/l/email-protection#6e020f1b1c0b001a40020f1d1d070b1c2e0d070306011a0b02401e1c01" style="border-bottom:1px solid var(--brass)">laurent.lassier<br/>@cimhotel.pro</a></div><div class="l">Direct</div></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="pro-detail">
         <div class="pro-detail-img" style="background:url('./team-julio.jpg') center/cover no-repeat">
           <span class="badge" style="color:#d4a857">Business Partner</span>
         </div>
@@ -347,6 +403,21 @@
           <div class="pro-stats">
             <div><div class="n">25+ y</div><div class="l">Experience</div></div>
             <div><div class="n" style="font-size:14px;letter-spacing:0"><a href="/cdn-cgi/l/email-protection#660c130a0f09480b0714130a0708020726050f0b0e0912030a48161409" style="border-bottom:1px solid var(--brass)">julio.marulanda<br/>@cimhotel.pro</a></div><div class="l">Direct</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pro-detail">
+        <div class="pro-detail-img" style="background:url('./team-laurent.jpg') center/cover no-repeat">
+          <span class="badge">Owner & C.E.O.</span>
+        </div>
+        <div class="pro-detail-body">
+          <div class="pro-detail-name">Laurent Lassier</div>
+          <div class="pro-detail-role">Owner & C.E.O.</div>
+          <p class="pro-bio">25 years of experience in all operational fields of hospitality and F&amp;B. Expert in sales, acquisitions and transactions, operator search, repositioning and asset management.</p>
+          <div class="pro-stats">
+            <div><div class="n">25y</div><div class="l">Experience</div></div>
+            <div><div class="n" style="font-size:14px;letter-spacing:0"><a href="/cdn-cgi/l/email-protection#6e020f1b1c0b001a40020f1d1d070b1c2e0d070306011a0b02401e1c01" style="border-bottom:1px solid var(--brass)">laurent.lassier<br/>@cimhotel.pro</a></div><div class="l">Direct</div></div>
           </div>
         </div>
       </article>

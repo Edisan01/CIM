@@ -50,7 +50,7 @@
 
   /* ========== HERO ========== */
   .hero{min-height:100vh;background:var(--ink);color:var(--cream);position:relative;overflow:hidden;padding:140px 48px 80px}
-  .hero::before{content:"";position:absolute;inset:0;background-image:url('images/turkey-hotel-pool.jpg');background-size:cover;background-position:center;opacity:0.18;filter:grayscale(0.3)}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#0a1830,#000);opacity:1}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.7) 0%,rgba(14,27,44,0.95) 100%)}
   .hero > *{position:relative;z-index:2}
   .hero-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;min-height:calc(100vh - 220px)}
@@ -276,17 +276,17 @@
     </div>
     <div class="pros-stack">
       <article class="pro-card">
-        <div class="pro-portrait" style="background:url('uploads/team-laurent.jpg') center/cover no-repeat"></div>
+        <div class="pro-portrait" style="background:url('./team-laurent.jpg') center/cover no-repeat"></div>
         <div class="pro-name">Laurent Lassier</div>
         <div class="pro-role">Senior Broker · France</div>
       </article>
       <article class="pro-card">
-        <div class="pro-portrait" style="background:url('uploads/team-julio.jpg') center/cover no-repeat"></div>
+        <div class="pro-portrait" style="background:url('./team-julio.jpg') center/cover no-repeat"></div>
         <div class="pro-name">Julio C. Marulanda</div>
         <div class="pro-role">Business Partner · Iberia</div>
       </article>
       <article class="pro-card">
-        <div class="pro-portrait" style="background:url('uploads/team-iulian.jpg') center/cover no-repeat"></div>
+        <div class="pro-portrait" style="background:url('./team-iulian.jpg') center/cover no-repeat"></div>
         <div class="pro-name">Iulian Racanel</div>
         <div class="pro-role">Business Partner · DACH & MENA</div>
       </article>
@@ -322,7 +322,7 @@
 
     <div class="pros-grid">
       <article class="pro-detail">
-        <div class="pro-detail-img" style="background:url('uploads/team-laurent.jpg') center/cover no-repeat">
+        <div class="pro-detail-img" style="background:url('./team-laurent.jpg') center/cover no-repeat">
           <span class="badge">Owner & C.E.O.</span>
         </div>
         <div class="pro-detail-body">
@@ -337,7 +337,7 @@
       </article>
 
       <article class="pro-detail">
-        <div class="pro-detail-img" style="background:url('uploads/team-julio.jpg') center/cover no-repeat">
+        <div class="pro-detail-img" style="background:url('./team-julio.jpg') center/cover no-repeat">
           <span class="badge" style="color:#d4a857">Business Partner</span>
         </div>
         <div class="pro-detail-body">
@@ -352,7 +352,7 @@
       </article>
 
       <article class="pro-detail">
-        <div class="pro-detail-img" style="background:url('uploads/team-iulian.jpg') center/cover no-repeat">
+        <div class="pro-detail-img" style="background:url('./team-iulian.jpg') center/cover no-repeat">
           <span class="badge">Business Partner</span>
         </div>
         <div class="pro-detail-body">
@@ -650,17 +650,17 @@ window.addEventListener('scroll', () => {
 // HOTELS DATA from PDF
 const HOTELS = [
   {slug:"san-souci-wien", name:"Hotel San Souci Wien", stars:5, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Luxury Hotel", keys:63, price:60000000, deal:"Asset deal", fee:"3.0%", est:"€1,800,000", agents:"Laurent & Iulian", fac:"Prime Ringstrasse / MuseumsQuartier. €12M annual revenue. Gourmet restaurant, bar, spa, pool, fitness, MICE, underground parking.", img:"linear-gradient(135deg,#8b6a2f,#3a2a12)"},
-  {slug:"villa-padierna-marbella", name:"Villa Padierna Palace Hotel", stars:5, status:"sale", country:"Spain", city:"Marbella", region:"eu", type:"Luxury Golf Resort", keys:149, price:130000000, deal:"Asset deal", fee:"1.0%", est:"€1,300,000", agents:"Laurent", fac:"Managed by Anantara (NH Group). Golf, Beach Club, MICE, Spa, wellness, indoor & outdoor pools, gardens.", photo:"uploads/Exterior2.jpg"},
+  {slug:"villa-padierna-marbella", name:"Villa Padierna Palace Hotel", stars:5, status:"sale", country:"Spain", city:"Marbella", region:"eu", type:"Luxury Golf Resort", keys:149, price:130000000, deal:"Asset deal", fee:"1.0%", est:"€1,300,000", agents:"Laurent", fac:"Managed by Anantara (NH Group). Golf, Beach Club, MICE, Spa, wellness, indoor & outdoor pools, gardens.", photo:"./Exterior2.jpg"},
   {slug:"hurghada-beachfront", name:"Beachfront Hurghada Hotel", stars:5, status:"sale", country:"Egypt", city:"Hurghada", region:"mena", type:"Beach Resort", keys:350, price:34000000, deal:"Turnkey asset deal", fee:"1.0%", est:"€340,000", agents:"Laurent & Iulian", fac:"Turnkey, operational-ready. As-is option at €24M. Eliminates construction/fit-out risk. Marina, private beach, palm-lined bay.", img:"linear-gradient(135deg,#0a4a6a,#062538)"},
   {slug:"alanya-beach-resort", name:"Alanya Beach Resort Hotel", stars:5, status:"sale", country:"Turkey", city:"Alanya", region:"mena", type:"Beach Resort", keys:285, price:42000000, deal:"Asset deal", fee:"1.0%", est:"€420,000", agents:"Laurent & Iulian", fac:"Crescent-shaped seafront resort on the Turkish Riviera. Double pool, multiple F&B outlets, spa, conference centre, direct beach access. Turnkey operation.", img:"linear-gradient(135deg,#7a2a2a,#3a1010)"},
-  {slug:"amberlyn-suite-budapest", name:"The Amberlyn Suite Budapest", stars:4, status:"sale", country:"Hungary", city:"Budapest", region:"eu", type:"Suite Hotel / Aparthotel", keys:83, price:27000000, deal:"Asset deal", fee:"1.0%", est:"€270,000", agents:"Laurent & Iulian", fac:"83 fully furnished apartments + 46 parking. Studios to 100m² duplexes. Lobby bar, fitness, rooftop terrace. Palace District.", photo:"uploads/Penthouse.jpg"},
+  {slug:"amberlyn-suite-budapest", name:"The Amberlyn Suite Budapest", stars:4, status:"sale", country:"Hungary", city:"Budapest", region:"eu", type:"Suite Hotel / Aparthotel", keys:83, price:27000000, deal:"Asset deal", fee:"1.0%", est:"€270,000", agents:"Laurent & Iulian", fac:"83 fully furnished apartments + 46 parking. Studios to 100m² duplexes. Lobby bar, fitness, rooftop terrace. Palace District.", photo:"./Penthouse.jpg"},
   {slug:"h2-budapest", name:"H2 Hotel Budapest", stars:4, status:"sale", country:"Hungary", city:"Budapest", region:"eu", type:"City Hotel", keys:157, price:35000000, deal:"Asset deal", fee:"1.0%", est:"€350,000", agents:"Laurent & Iulian", fac:"Brand new. Top location. Restaurant, bar, terrace, indoor parking.", img:"linear-gradient(135deg,#2a4a6a,#0e1b2c)"},
   {slug:"steigenberger-krems", name:"Hotel Steigenberger Krems", stars:4, status:"sale", country:"Austria", city:"Krems", region:"eu", type:"Mountain Resort", keys:173, price:29000000, deal:"Asset deal", fee:"1.0%", est:"€290,000", agents:"Laurent & Iulian", fac:"43 suites, 2,428m² spa, 7 conference rooms (324 pax), Cardea therapy centre, 140 parking spaces.", img:"linear-gradient(135deg,#4a5a3a,#1a2012)"},
-  {slug:"ibercity-schonbrunn", name:"Hotel Ibercity Wien Schönbrunn", stars:4, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Hotel", keys:118, price:25000000, deal:"Asset deal", fee:"1.0%", est:"€250,000", agents:"Laurent", fac:"Restaurant, bar, MICE, indoor & outdoor parking, fitness, business corner. Net lease to Ibersol Group until 2040.", photo:"uploads/Exterior-18a55c09.jpg"},
+  {slug:"ibercity-schonbrunn", name:"Hotel Ibercity Wien Schönbrunn", stars:4, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Hotel", keys:118, price:25000000, deal:"Asset deal", fee:"1.0%", est:"€250,000", agents:"Laurent", fac:"Restaurant, bar, MICE, indoor & outdoor parking, fitness, business corner. Net lease to Ibersol Group until 2040.", photo:"./Exterior-18a55c09.jpg"},
   {slug:"mercure-raphael-wien", name:"Hotel Mercure Raphael Wien", stars:4, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Hotel", keys:78, price:14000000, deal:"Shares deal", fee:"1.0%", est:"€140,000", agents:"Laurent & Iulian", fac:"Directly at Westbahnhof station & Mariahilfer Straße. Bar, restaurant.", img:"linear-gradient(135deg,#6a5a4a,#2a201a)"},
-  {slug:"benetusser-valencia", name:"Benetusser Hotel", stars:4, status:"sale", country:"Spain", city:"Valencia · Benetússer", region:"eu", type:"City Hotel", keys:73, price:12800000, deal:"Asset deal", fee:"1.0%", est:"€128,000", agents:"Laurent", fac:"4★ in Huerta Sur, 7 min by train to Valencia centre, 15 min from airport. Restaurant, bar, parking (40), meeting room, laundry. Single-owner family business; 4.0 / Google · 7.6 / Booking. +20 keys expansion via adjacent building.", photo:"images/benetusser-exterior.jpg"},
-  {slug:"hotel-el-puntazo-mojacar", name:"Hotel El Puntazo Mojácar", stars:3, status:"sale", country:"Spain", city:"Mojácar, Almería", region:"eu", type:"Beachfront Hotel", keys:160, price:21780000, deal:"Asset deal", fee:"4.0%", est:"€871,200", agents:"Laurent", fac:"Beachfront, Paseo del Mediterráneo. Restaurant, bar, outdoor pool, sun terrace, parking. Direct beach access. Repositioning to 4★.", photo:"uploads/Exterior-a01e007c.jpg"},
-  {slug:"comarruga-platja", name:"Hotel Comarruga Platja", stars:3, status:"sale", country:"Spain", city:"Comarruga", region:"eu", type:"Beach Resort", keys:75, price:4350000, deal:"Asset deal", fee:"4.0%", est:"€174,000", agents:"Laurent", fac:"Restaurant, bar, outdoor pool, terrace, MICE (50 pax), parking. 100m from beach. Operator-free.", photo:"uploads/Exterior-2fdc4942.jpg"},
+  {slug:"benetusser-valencia", name:"Benetusser Hotel", stars:4, status:"sale", country:"Spain", city:"Valencia · Benetússer", region:"eu", type:"City Hotel", keys:73, price:12800000, deal:"Asset deal", fee:"1.0%", est:"€128,000", agents:"Laurent", fac:"4★ in Huerta Sur, 7 min by train to Valencia centre, 15 min from airport. Restaurant, bar, parking (40), meeting room, laundry. Single-owner family business; 4.0 / Google · 7.6 / Booking. +20 keys expansion via adjacent building.", photo:"./benetusser-exterior.jpg"},
+  {slug:"hotel-el-puntazo-mojacar", name:"Hotel El Puntazo Mojácar", stars:3, status:"sale", country:"Spain", city:"Mojácar, Almería", region:"eu", type:"Beachfront Hotel", keys:160, price:21780000, deal:"Asset deal", fee:"4.0%", est:"€871,200", agents:"Laurent", fac:"Beachfront, Paseo del Mediterráneo. Restaurant, bar, outdoor pool, sun terrace, parking. Direct beach access. Repositioning to 4★.", photo:"./Exterior-a01e007c.jpg"},
+  {slug:"comarruga-platja", name:"Hotel Comarruga Platja", stars:3, status:"sale", country:"Spain", city:"Comarruga", region:"eu", type:"Beach Resort", keys:75, price:4350000, deal:"Asset deal", fee:"4.0%", est:"€174,000", agents:"Laurent", fac:"Restaurant, bar, outdoor pool, terrace, MICE (50 pax), parking. 100m from beach. Operator-free.", photo:"./Exterior-2fdc4942.jpg"},
   {slug:"j-haus-dubai", name:"J-Haus Residences Dubai", stars:0, status:"lease", country:"UAE", city:"Dubai · Jumeirah Village Circle", region:"mena", type:"Luxury Apartments", keys:179, price:11900000, deal:"9+9 Y lease", fee:"1 mo. of lease", est:"€991,667", agents:"Laurent & Iulian", fac:"Master-planned JVC community. Family-friendly, green spaces, Sheikh Mohammed Bin Zayed & Al Khail Road access.", img:"linear-gradient(135deg,#D4A857,#8b6a2f)"},
   {slug:"production-city-dubai", name:"Production City Serviced Apts.", stars:0, status:"lease", country:"UAE", city:"Dubai · Jumeirah Village Circle", region:"mena", type:"Serviced Apartments", keys:396, price:8000000, deal:"20 Y lease", fee:"1 mo. of lease", est:"€666,667", agents:"Laurent & Iulian", fac:"Modern residential development. Efficient layouts for serviced-apartment operation. Business travellers, tourists, long-stay.", img:"linear-gradient(135deg,#b8873f,#6b4e1f)"},
   {slug:"novotel-danube-budapest", name:"Novotel Danube Budapest", stars:4, status:"lease", country:"Hungary", city:"Budapest", region:"eu", type:"City Hotel", keys:175, price:2275000, deal:"20 Y lease", fee:"Owner mandate", est:"On request", agents:"Laurent", fac:"Restaurant, bar, parking, MICE, fitness, sauna.", img:"linear-gradient(135deg,#2a3a52,#0e1b2c)"},
@@ -683,7 +683,7 @@ function render(filter){
   }
   grid.innerHTML = items.map(h => `
     <article class="hotel" data-status="${h.status}" data-stars="${h.stars}" data-region="${h.region}">
-      <a href="teasers/${h.slug}.html" class="hotel-img" style="${h.photo ? `background-image:url('${h.photo}');background-size:cover;background-position:center;` : `background:${h.img};`}display:block;text-decoration:none">
+      <a href="${h.slug}.html" class="hotel-img" style="${h.photo ? `background-image:url('${h.photo}');background-size:cover;background-position:center;` : `background:${h.img};`}display:block;text-decoration:none">
         ${h.photo ? '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.1) 0%,rgba(14,27,44,0.55) 100%)"></div>' : ''}
         ${h.stars > 0 ? `<div class="stars">${stars(h.stars)}</div>` : ''}
         <div class="country">${h.country}</div>
@@ -692,7 +692,7 @@ function render(filter){
       <div class="hotel-body">
         <div>
           <div class="hotel-type">${h.type}</div>
-          <h3 class="hotel-name"><a href="teasers/${h.slug}.html" style="border-bottom:1px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='transparent'">${h.name}</a></h3>
+          <h3 class="hotel-name"><a href="${h.slug}.html" style="border-bottom:1px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='transparent'">${h.name}</a></h3>
           <div class="hotel-city">${h.city}</div>
           <div class="hotel-meta">
             <div><div class="n">${h.keys}</div><div class="l">Keys</div></div>
@@ -703,7 +703,7 @@ function render(filter){
         </div>
         <div class="hotel-footer">
           <div class="agents">${h.agents}</div>
-          <a class="view" href="teasers/${h.slug}.html">View teaser →</a>
+          <a class="view" href="${h.slug}.html">View teaser →</a>
         </div>
       </div>
     </article>

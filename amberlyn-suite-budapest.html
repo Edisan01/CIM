@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Amberlyn Suite Budapest — Investment Teaser · CIM Hotel Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B2C;--ink-2:#18273B;--cream:#F4EEE3;--paper:#FBF8F2;
+  --brass:#B8873F;--brass-2:#D4A857;--line:rgba(14,27,44,0.12);
+  --line-cream:rgba(244,238,227,0.18);--muted:#5A6677;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(14,27,44,0);transition:background .3s,backdrop-filter .3s}
+.topbar.scrolled{background:rgba(14,27,44,0.92);backdrop-filter:blur(14px)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--cream)}
+.logo-mark{width:32px;height:32px;border:1px solid var(--brass-2);display:grid;place-items:center;font-family:'Instrument Serif',serif;font-size:18px;color:var(--brass-2)}
+.logo-text{font-family:'Instrument Serif',serif;font-size:20px;letter-spacing:.02em}
+.logo-text small{display:block;font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-2);margin-top:1px;font-weight:500}
+.back-link{color:var(--cream);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.7;transition:opacity .2s}
+.back-link:hover{opacity:1}
+
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-img{position:absolute;inset:0;background:url('../uploads/Penthouse.jpg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.3) 0%,rgba(14,27,44,0.0) 40%,rgba(14,27,44,0.0) 50%,rgba(14,27,44,0.92) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 48px 64px;color:var(--cream)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin-bottom:20px}
+.hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass-2)}
+.hero-title{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,84px);line-height:.95;letter-spacing:-.02em;margin-bottom:16px}
+.hero-title em{font-style:italic;color:var(--brass-2)}
+.hero-sub{font-size:17px;color:rgba(244,238,227,.75);font-weight:300;max-width:560px;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;padding-top:24px;border-top:1px solid var(--line-cream);flex-wrap:wrap}
+.hero-stat .n{font-family:'Instrument Serif',serif;font-size:36px;line-height:1;letter-spacing:-.02em}
+.hero-stat .n em{color:var(--brass-2);font-style:normal}
+.hero-stat .l{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,238,227,.55);margin-top:6px;font-weight:600}
+
+.intro-strip{background:var(--ink);color:var(--cream);padding:48px}
+.intro-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:80px;align-items:start}
+.intro-text{font-size:18px;line-height:1.65;color:rgba(244,238,227,.8);font-weight:300}
+.intro-text strong{color:var(--cream);font-weight:600}
+.key-facts{display:flex;flex-direction:column}
+.key-fact{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line-cream)}
+.key-fact:first-child{border-top:1px solid var(--line-cream)}
+.key-fact .kf-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,238,227,.5);font-weight:600}
+.key-fact .kf-value{font-family:'Instrument Serif',serif;font-size:19px;color:var(--cream)}
+
+/* UNIT MIX */
+.mix-section{background:var(--cream);padding:80px 48px}
+.mix-wrap{max-width:1440px;margin:0 auto}
+.mix-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.mix-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass)}
+.mix-title{font-family:'Instrument Serif',serif;font-size:clamp(32px,3.5vw,52px);line-height:1;letter-spacing:-.02em;margin-bottom:40px}
+.mix-title em{font-style:italic;color:var(--brass)}
+.mix-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:48px}
+.mix-card{background:var(--ink);color:var(--cream);padding:32px 28px}
+.mix-card .mc-type{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass-2);font-weight:700;margin-bottom:16px}
+.mix-card .mc-count{font-family:'Instrument Serif',serif;font-size:64px;line-height:1;letter-spacing:-.03em;margin-bottom:4px}
+.mix-card .mc-size{font-size:22px;font-family:'Instrument Serif',serif;color:rgba(244,238,227,.6)}
+.mix-card .mc-desc{font-size:12px;color:rgba(244,238,227,.5);margin-top:12px;line-height:1.4}
+.mix-card:nth-child(2){background:var(--ink-2)}
+.mix-card:nth-child(3){background:#1e2f42}
+.mix-card:nth-child(4){background:var(--brass);color:var(--ink)}
+.mix-card:nth-child(4) .mc-type{color:rgba(14,27,44,.6)}
+.mix-card:nth-child(4) .mc-size{color:rgba(14,27,44,.5)}
+.mix-card:nth-child(4) .mc-desc{color:rgba(14,27,44,.6)}
+
+/* GALLERY */
+.gallery-section{background:var(--paper);padding:80px 0 100px}
+.gallery-wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.gallery-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gallery-tabs::-webkit-scrollbar{display:none}
+.gtab{padding:14px 24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+.gtab:hover{color:var(--ink)}
+.gtab.active{color:var(--ink);border-bottom-color:var(--brass-2)}
+.gallery-layout{display:none}
+.gallery-layout.active{display:grid}
+.gl-hero-grid{gap:4px}
+.g-hero{aspect-ratio:16/7;overflow:hidden;cursor:pointer;margin-bottom:4px}
+.g-row{display:grid;gap:4px;margin-bottom:4px}
+.g-row-3{grid-template-columns:1fr 1fr 1fr}
+.g-row-2{grid-template-columns:1fr 1fr}
+.g-sub{aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.g-sub img,.g-hero img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.g-sub img:hover,.g-hero img:hover{transform:scale(1.04)}
+
+/* INVEST */
+.invest{background:var(--ink);color:var(--cream);padding:100px 48px}
+.invest-wrap{max-width:1440px;margin:0 auto}
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.invest-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.invest-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass-2)}
+.invest h2{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,60px);line-height:1.05;letter-spacing:-.02em;margin-bottom:32px}
+.invest h2 em{font-style:italic;color:var(--brass-2)}
+.invest p{font-size:16px;line-height:1.7;color:rgba(244,238,227,.7);margin-bottom:20px}
+.deal-card{background:var(--ink-2);border:1px solid var(--line-cream);padding:40px}
+.deal-price{font-family:'Instrument Serif',serif;font-size:72px;line-height:1;letter-spacing:-.03em;margin-bottom:4px}
+.deal-price .cur{color:var(--brass-2)}
+.deal-price small{font-family:'Manrope';font-size:20px;color:rgba(244,238,227,.5);letter-spacing:0;font-weight:400}
+.deal-sub{font-size:13px;color:rgba(244,238,227,.5);margin-bottom:32px;letter-spacing:.06em}
+.deal-rows{border-top:1px solid var(--line-cream)}
+.deal-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(244,238,227,.06)}
+.deal-row .dr-l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,238,227,.45);font-weight:600}
+.deal-row .dr-v{font-family:'Instrument Serif',serif;font-size:19px;color:var(--cream)}
+.deal-highlight{background:var(--brass-2);color:var(--ink);padding:16px 24px;margin-top:24px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+
+.fac-section{background:var(--cream);padding:80px 48px}
+.fac-wrap{max-width:1440px;margin:0 auto}
+.fac-title{font-family:'Instrument Serif',serif;font-size:clamp(32px,3.5vw,52px);line-height:1;letter-spacing:-.02em;margin-bottom:48px}
+.fac-title em{font-style:italic;color:var(--brass)}
+.fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fac-item{border-top:2px solid var(--ink);padding-top:18px}
+.fac-item .fi-cat{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:8px}
+.fac-item .fi-title{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.1;margin-bottom:8px}
+.fac-item .fi-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+.cta{background:var(--paper);padding:100px 48px;border-top:1px solid var(--line)}
+.cta-wrap{max-width:800px;margin:0 auto;text-align:center}
+.cta h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+.cta h2 em{font-style:italic;color:var(--brass)}
+.cta p{font-size:17px;color:var(--muted);line-height:1.6;margin-bottom:40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{padding:16px 36px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:12px}
+.btn-primary{background:var(--brass-2);color:var(--ink)}
+.btn-primary:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.cta-nda{font-size:12px;color:var(--muted);margin-top:24px}
+
+footer{background:var(--ink);color:rgba(244,238,227,.6);padding:40px 48px}
+.foot-row{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.foot-row a{color:var(--brass-2)}
+
+.lightbox{position:fixed;inset:0;background:rgba(14,27,44,.97);z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-img{max-width:90vw;max-height:82vh;object-fit:contain;display:block}
+.lb-close{position:fixed;top:24px;right:32px;color:var(--cream);font-size:28px;cursor:pointer;opacity:.7;background:none;border:none;line-height:1;transition:opacity .2s}
+.lb-close:hover{opacity:1}
+.lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);color:var(--cream);font-family:'Instrument Serif',serif;font-style:italic;font-size:48px;cursor:pointer;opacity:.6;background:none;border:none;padding:20px;line-height:1;user-select:none;transition:opacity .2s}
+.lb-prev:hover,.lb-next:hover{opacity:1}
+.lb-prev{left:12px}.lb-next{right:12px}
+.lb-counter{position:fixed;bottom:28px;color:rgba(244,238,227,.5);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+
+@media(max-width:1024px){
+  .topbar,.hero-content{padding-left:24px;padding-right:24px}
+  .intro-grid,.invest-grid{grid-template-columns:1fr;gap:40px}
+  .gallery-wrap,.invest,.fac-section,.cta,.mix-section,footer{padding-left:24px;padding-right:24px}
+  .fac-grid,.mix-grid{grid-template-columns:1fr 1fr}
+  .g-row-3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .fac-grid,.mix-grid,.g-row-3,.g-row-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar" id="topbar">
+  <a href="../index.html" class="logo">
+    <span class="logo-mark">C</span>
+    <span class="logo-text">CIM Hotel Solutions<small>Est. Brokerage · Europe · MENA</small></span>
+  </a>
+  <a href="../index.html" class="back-link">← Back to Portfolio</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Suite Hotel · For Sale · Budapest, Hungary</div>
+    <h1 class="hero-title">The Amberlyn<br/><em>Suite Budapest</em></h1>
+    <p class="hero-sub">83 fully equipped designer apartments in Budapest's Palace District — panoramic roof terrace overlooking the Buda Castle and St. Stephen's Basilica. Award-winning interior design, fully operational.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n"><em>83</em></div><div class="l">Apartments</div></div>
+      <div class="hero-stat"><div class="n">€<em>27</em>M</div><div class="l">Asking Price</div></div>
+      <div class="hero-stat"><div class="n"><em>46</em></div><div class="l">Parking Spaces</div></div>
+      <div class="hero-stat"><div class="n"><em>8</em></div><div class="l">Floors</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="intro-strip">
+  <div class="intro-grid">
+    <p class="intro-text">
+      The Amberlyn Suite Hotel (Sophie Palace) is a <strong>fully operational 83-unit aparthotel</strong> in the heart of Budapest's Palace District — one of the city's most rapidly appreciating central neighbourhoods. The building was completed in Q2 2020, received its occupancy authorisation in April 2020, and earned the <strong>Golden Novum Design Award (NDA) 2019</strong> for its lobby design.<br/><br/>
+      Each apartment is <strong>fully furnished and equipped</strong> — from studios of 38 m² to 100 m² duplex units — with full kitchens, marble bathrooms, air-conditioning and premium finishes throughout. <strong>46 underground parking spaces</strong> are included in the sale. The building has 8 floors, a lobby bar, fitness area, community space and a panoramic <strong>roof terrace with views of the Buda Castle and St. Stephen's Basilica</strong>.
+    </p>
+    <div class="key-facts">
+      <div class="key-fact"><span class="kf-label">Location</span><span class="kf-value">4 Rökk Szilárd St., District 8</span></div>
+      <div class="key-fact"><span class="kf-label">Quarter</span><span class="kf-value">Palace District (Palotanegyed)</span></div>
+      <div class="key-fact"><span class="kf-label">Units</span><span class="kf-value">83 apartments</span></div>
+      <div class="key-fact"><span class="kf-label">Parking</span><span class="kf-value">46 underground spaces</span></div>
+      <div class="key-fact"><span class="kf-label">Building Area</span><span class="kf-value">~7,000 m²</span></div>
+      <div class="key-fact"><span class="kf-label">Completed</span><span class="kf-value">Q2 2020</span></div>
+      <div class="key-fact"><span class="kf-label">Asking Price</span><span class="kf-value">€27,000,000</span></div>
+      <div class="key-fact"><span class="kf-label">Commission</span><span class="kf-value">1% (buyer)</span></div>
+      <div class="key-fact"><span class="kf-label">Broker</span><span class="kf-value">Laurent & Iulian</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT MIX -->
+<section class="mix-section">
+  <div class="mix-wrap">
+    <div class="mix-eyebrow">Unit Mix</div>
+    <h2 class="mix-title">83 apartments,<br/><em>four typologies.</em></h2>
+    <div class="mix-grid">
+      <div class="mix-card">
+        <div class="mc-type">Studios</div>
+        <div class="mc-count">23</div>
+        <div class="mc-size">38 m²</div>
+        <div class="mc-desc">Open-plan studio apartments. Full kitchen, marble bath. Ideal for short-stay and long-stay operators.</div>
+      </div>
+      <div class="mix-card">
+        <div class="mc-type">One-Bedroom</div>
+        <div class="mc-count">41</div>
+        <div class="mc-size">45 m²</div>
+        <div class="mc-desc">Separate bedroom, open living/kitchen. The core of the unit mix — broadest demand profile.</div>
+      </div>
+      <div class="mix-card">
+        <div class="mc-type">Two-Bedroom</div>
+        <div class="mc-count">15</div>
+        <div class="mc-size">65 m²</div>
+        <div class="mc-desc">Two separate bedrooms, full living room, kitchen. Suited to families and long-stay corporate guests.</div>
+      </div>
+      <div class="mix-card">
+        <div class="mc-type">Duplex</div>
+        <div class="mc-count">4</div>
+        <div class="mc-size">100 m²</div>
+        <div class="mc-desc">Top-floor duplex apartments with panoramic terrace access. Penthouse-level views over Budapest.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-wrap">
+    <nav class="gallery-tabs" id="galleryTabs">
+      <button class="gtab active" data-tab="exterior">Exterior &amp; Views</button>
+      <button class="gtab" data-tab="suites">Suites &amp; Apartments</button>
+      <button class="gtab" data-tab="lobby">Lobby &amp; Bar</button>
+    </nav>
+
+    <!-- EXTERIOR -->
+    <div class="gallery-layout gl-hero-grid active" id="tab-exterior">
+      <div class="g-hero"><img src="../uploads/Penthouse.jpg" alt="Rooftop panorama Budapest"/></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub"><img src="../uploads/Exterior-a50a776a.jpg" alt="Building facade"/></div>
+        <div class="g-sub"><img src="../uploads/Exterior2-c444a226.jpg" alt="Amberlyn signage"/></div>
+        <div class="g-sub"><img src="../uploads/Penthouse2.jpg" alt="Penthouse bedroom"/></div>
+      </div>
+    </div>
+
+    <!-- SUITES -->
+    <div class="gallery-layout gl-hero-grid" id="tab-suites">
+      <div class="g-hero"><img src="../uploads/Penthouse2.jpg" alt="Penthouse suite"/></div></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub"><img src="../uploads/Exterior-a50a776a.jpg" alt="Building facade"/></div>
+        <div class="g-sub"><img src="../uploads/Kitchen.jpg" alt="Fitted kitchen"/></div>
+        <div class="g-sub"><img src="../uploads/Suite%20Deluxe.jpg" alt="Deluxe suite bathroom"/></div>
+      </div>
+    </div>
+
+    <!-- LOBBY -->
+    <div class="gallery-layout gl-hero-grid" id="tab-lobby">
+      <div class="g-hero"><img src="../uploads/Bar-4cfe5755.jpg" alt="Bar and lobby"/></div>
+      <div class="g-row g-row-2">
+        <div class="g-sub"><img src="../uploads/Kitchen.jpg" alt="Kitchen"/></div>
+        <div class="g-sub"><img src="../uploads/Suite%20Deluxe.jpg" alt="Suite bathroom"/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="invest">
+  <div class="invest-wrap">
+    <div class="invest-grid">
+      <div>
+        <div class="invest-eyebrow">Investment Case</div>
+        <h2>Budapest's Palace District —<br/><em>aparthotel play.</em></h2>
+        <p>The Amberlyn Suite combines the capital appreciation dynamics of a central Budapest residential asset with the yield profile of a fully operational serviced apartment operation. At €325,000 per unit inclusive of 46 underground parking spaces, the pricing reflects the high-quality fitout and central location rather than a distressed entry.</p>
+        <p>Budapest's short-term rental and aparthotel market has proven highly resilient. The Palace District benefits from growing tourism demand, six university campuses within walking distance, and the ongoing Blaha Lujza Square regeneration programme — a €6M city investment directly improving the immediate streetscape.</p>
+        <p>The asset can be operated as a full serviced apartment building, leased to an operator, or sold unit-by-unit to end buyers — offering the new owner multiple exit paths.</p>
+      </div>
+      <div class="deal-card">
+        <div class="deal-price"><span class="cur">€</span>27<small>M</small></div>
+        <div class="deal-sub">Asking Price · Asset Deal</div>
+        <div class="deal-rows">
+          <div class="deal-row"><span class="dr-l">Per Unit</span><span class="dr-v">€325,301</span></div>
+          <div class="deal-row"><span class="dr-l">Units</span><span class="dr-v">83 apartments</span></div>
+          <div class="deal-row"><span class="dr-l">Parking</span><span class="dr-v">46 spaces (included)</span></div>
+          <div class="deal-row"><span class="dr-l">Building Area</span><span class="dr-v">~7,000 m²</span></div>
+          <div class="deal-row"><span class="dr-l">Completed</span><span class="dr-v">Q2 2020</span></div>
+          <div class="deal-row"><span class="dr-l">District</span><span class="dr-v">Budapest 8 · Palace</span></div>
+          <div class="deal-row"><span class="dr-l">Commission</span><span class="dr-v">1% (buyer)</span></div>
+        </div>
+        <div class="deal-highlight">
+          <span>IM on request</span>
+          <span>→ Contact broker</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fac-section">
+  <div class="fac-wrap">
+    <h2 class="fac-title">Award-winning design.<br/><em>Full infrastructure.</em></h2>
+    <div class="fac-grid">
+      <div class="fac-item">
+        <div class="fi-cat">Accommodation</div>
+        <div class="fi-title">83 Furnished Apartments</div>
+        <div class="fi-desc">Studios to 100 m² duplexes. All fully fitted — Italian marble, Marca Corona tiles, premium kitchen, A/C, smart TV.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Parking</div>
+        <div class="fi-title">46 Underground Spaces</div>
+        <div class="fi-desc">Fully automated underground parking included in the sale. Significant premium in central Budapest.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">F&amp;B</div>
+        <div class="fi-title">Lobby Bar</div>
+        <div class="fi-desc">Industrial-chic bar/café on the ground floor. Serves hotel guests and neighbourhood clientele.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Rooftop</div>
+        <div class="fi-title">Panoramic Roof Terrace</div>
+        <div class="fi-desc">Open-air terrace on the 8th floor with views of Buda Castle, St. Stephen's Basilica and the city skyline.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Wellness</div>
+        <div class="fi-title">Fitness Area · 50 m²</div>
+        <div class="fi-desc">Equipped fitness room for residents and hotel guests. Community space for events and co-working.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Services</div>
+        <div class="fi-title">Cleaning · Laundry</div>
+        <div class="fi-desc">Full serviced apartment infrastructure. Cleaning, laundry, reception services operational from day one.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Design</div>
+        <div class="fi-title">Golden NDA 2019</div>
+        <div class="fi-desc">Lobby design won the world-leading Golden Novum Design Award (92–93/100). Designed by The Showroom studio.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Location</div>
+        <div class="fi-title">Metro M2 · 6 min · Tram 4/6 · 2 min</div>
+        <div class="fi-desc">Palace District, Budapest 8. Blaha Lujza Square 2 min walk. Airport 25 min. Vienna motorway 20 min.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-wrap">
+    <div style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px"><span style="display:inline-block;width:24px;height:1px;background:var(--brass)"></span>Request Information · CIM Hotel Solutions</div>
+    <h2>Interested in<br/><em>The Amberlyn?</em></h2>
+    <p>Contact Laurent Lassier or Iulian Racanel for the full Information Memorandum, revenue data and site visit.</p>
+    <div class="cta-btns">
+      <a href="mailto:laurent.lassier@cimhotel.pro?subject=Amberlyn Suite Budapest — Buyer Inquiry" class="btn btn-primary">Contact Laurent Lassier <span style="font-family:'Instrument Serif';font-style:italic">→</span></a>
+      <a href="mailto:iulian.racanel@cimhotel.pro?subject=Amberlyn Suite Budapest — Buyer Inquiry" class="btn btn-ghost">Contact Iulian Racanel</a>
+    </div>
+    <p class="cta-nda">Commission: 1% payable by the buyer. All information subject to NDA.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-row">
+    <div>© 2026 CIM Hotel Solutions · LKMB Capital</div>
+    <div><a href="mailto:laurent.lassier@cimhotel.pro">laurent.lassier@cimhotel.pro</a></div>
+    <div>Vienna · Marbella · Dubai</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <button class="lb-prev" id="lbPrev">‹</button>
+  <img class="lb-img" id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""/>
+  <button class="lb-next" id="lbNext">›</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script>
+const topbar = document.getElementById('topbar');
+window.addEventListener('scroll', () => topbar.classList.toggle('scrolled', window.scrollY > 60));
+document.querySelectorAll('.gtab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.gallery-layout').forEach(l => l.classList.remove('active'));
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+let currentImages = [], currentIndex = 0;
+function openLightbox(galleryId, idx) {
+  const el = document.getElementById('tab-' + galleryId);
+  currentImages = [...el.querySelectorAll('img')].map(i => ({src: i.src, alt: i.alt}));
+  currentIndex = idx; showLb();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function showLb() {
+  document.getElementById('lbImg').src = currentImages[currentIndex].src;
+  document.getElementById('lbCounter').textContent = (currentIndex+1) + ' / ' + currentImages.length;
+}
+function closeLb() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', () => { currentIndex=(currentIndex-1+currentImages.length)%currentImages.length; showLb(); });
+document.getElementById('lbNext').addEventListener('click', () => { currentIndex=(currentIndex+1)%currentImages.length; showLb(); });
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target===e.currentTarget) closeLb(); });
+document.addEventListener('keydown', e => {
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key==='Escape') closeLb();
+  if(e.key==='ArrowLeft') { currentIndex=(currentIndex-1+currentImages.length)%currentImages.length; showLb(); }
+  if(e.key==='ArrowRight') { currentIndex=(currentIndex+1)%currentImages.length; showLb(); }
+});
+document.querySelectorAll('.gallery-layout').forEach(layout => {
+  const id = layout.id.replace('tab-','');
+  [...layout.querySelectorAll('img')].forEach((img, idx) => {
+    img.parentElement.style.cursor='pointer';
+    img.parentElement.addEventListener('click', () => openLightbox(id, idx));
+  });
+});
+</script>
+</body>
+</html>

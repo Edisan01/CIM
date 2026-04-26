@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Villa Padierna Palace Hotel — Investment Teaser · CIM Hotel Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B2C;
+  --ink-2:#18273B;
+  --cream:#F4EEE3;
+  --cream-2:#EAE2D2;
+  --paper:#FBF8F2;
+  --brass:#B8873F;
+  --brass-2:#D4A857;
+  --rust:#8B3A1D;
+  --line:rgba(14,27,44,0.12);
+  --line-cream:rgba(244,238,227,0.18);
+  --muted:#5A6677;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ===== NAV BAR ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(14,27,44,0);transition:background .3s,backdrop-filter .3s}
+.topbar.scrolled{background:rgba(14,27,44,0.92);backdrop-filter:blur(14px)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--cream)}
+.logo-mark{width:32px;height:32px;border:1px solid var(--brass-2);display:grid;place-items:center;font-family:'Instrument Serif',serif;font-size:18px;color:var(--brass-2)}
+.logo-text{font-family:'Instrument Serif',serif;font-size:20px;letter-spacing:.02em}
+.logo-text small{display:block;font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-2);margin-top:1px;font-weight:500}
+.back-link{color:var(--cream);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.7;transition:opacity .2s;display:flex;align-items:center;gap:8px}
+.back-link:hover{opacity:1}
+
+/* ===== HERO ===== */
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-img{position:absolute;inset:0;background:url('../uploads/Exterior2.jpg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.25) 0%,rgba(14,27,44,0.0) 30%,rgba(14,27,44,0.0) 50%,rgba(14,27,44,0.88) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 48px 64px;color:var(--cream)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin-bottom:20px}
+.hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass-2)}
+.hero-title{font-family:'Instrument Serif',serif;font-size:clamp(52px,6.5vw,96px);line-height:.95;letter-spacing:-.02em;margin-bottom:16px}
+.hero-title em{font-style:italic;color:var(--brass-2)}
+.hero-sub{font-size:17px;color:rgba(244,238,227,.75);font-weight:300;max-width:560px;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;padding-top:24px;border-top:1px solid var(--line-cream)}
+.hero-stat .n{font-family:'Instrument Serif',serif;font-size:38px;line-height:1;letter-spacing:-.02em}
+.hero-stat .n em{color:var(--brass-2);font-style:normal}
+.hero-stat .l{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,238,227,.55);margin-top:6px;font-weight:600}
+
+/* ===== INTRO STRIP ===== */
+.intro-strip{background:var(--ink);color:var(--cream);padding:48px}
+.intro-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:80px;align-items:start}
+.intro-text{font-size:19px;line-height:1.65;color:rgba(244,238,227,.8);font-weight:300}
+.intro-text strong{color:var(--cream);font-weight:600}
+.key-facts{display:flex;flex-direction:column;gap:0}
+.key-fact{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line-cream)}
+.key-fact:first-child{border-top:1px solid var(--line-cream)}
+.key-fact .kf-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,238,227,.5);font-weight:600}
+.key-fact .kf-value{font-family:'Instrument Serif',serif;font-size:20px;color:var(--cream)}
+
+/* ===== GALLERY ===== */
+.gallery-section{background:var(--paper);padding:80px 0 100px}
+.gallery-wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.gallery-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gallery-tabs::-webkit-scrollbar{display:none}
+.gtab{padding:14px 24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:color .2s,border-color .2s;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.gtab:hover{color:var(--ink)}
+.gtab.active{color:var(--ink);border-bottom-color:var(--brass-2)}
+
+/* main gallery layout */
+.gallery-layout{display:none}
+.gallery-layout.active{display:grid}
+
+/* hero+grid layout for most */
+.gl-hero-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:4px}
+.gl-hero-grid .g-hero{grid-column:span 2;aspect-ratio:16/7;overflow:hidden;cursor:pointer}
+.gl-hero-grid .g-row{display:grid;gap:4px}
+.gl-hero-grid .g-row-3{grid-template-columns:1fr 1fr 1fr}
+.gl-hero-grid .g-row-2{grid-template-columns:1fr 1fr}
+
+/* masonry-feel grid for smaller sets */
+.gl-grid{grid-template-columns:repeat(3,1fr);gap:4px}
+.gl-grid .g-cell{aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.gl-grid .g-cell.wide{grid-column:span 2;aspect-ratio:21/9}
+.gl-grid .g-cell.tall{grid-row:span 2;aspect-ratio:3/4}
+
+.g-img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.25,.46,.45,.94),filter .5s}
+.g-img:hover{transform:scale(1.04);filter:brightness(1.05)}
+.g-cell,.g-hero,.g-sub{overflow:hidden;cursor:pointer}
+.g-sub{aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.g-sub img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .5s}
+.g-sub img:hover{transform:scale(1.04)}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(14,27,44,.97);z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-img-wrap{position:relative;max-width:90vw;max-height:82vh;display:flex;align-items:center;justify-content:center}
+.lb-img{max-width:90vw;max-height:82vh;object-fit:contain;display:block}
+.lb-close{position:fixed;top:24px;right:32px;color:var(--cream);font-size:28px;cursor:pointer;opacity:.7;transition:opacity .2s;background:none;border:none;line-height:1}
+.lb-close:hover{opacity:1}
+.lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);color:var(--cream);font-family:'Instrument Serif',serif;font-style:italic;font-size:48px;cursor:pointer;opacity:.6;transition:opacity .2s;background:none;border:none;padding:20px;line-height:1;user-select:none}
+.lb-prev:hover,.lb-next:hover{opacity:1}
+.lb-prev{left:12px}
+.lb-next{right:12px}
+.lb-counter{position:fixed;bottom:28px;color:rgba(244,238,227,.5);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+.lb-caption{position:fixed;bottom:56px;color:rgba(244,238,227,.6);font-size:13px;letter-spacing:.1em}
+
+/* ===== INVESTMENT DETAILS ===== */
+.invest{background:var(--ink);color:var(--cream);padding:100px 48px}
+.invest-wrap{max-width:1440px;margin:0 auto}
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.section-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.section-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass-2)}
+.invest h2{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,60px);line-height:1.05;letter-spacing:-.02em;margin-bottom:32px}
+.invest h2 em{font-style:italic;color:var(--brass-2)}
+.invest p{font-size:16px;line-height:1.7;color:rgba(244,238,227,.7);margin-bottom:20px}
+
+.deal-card{background:var(--ink-2);border:1px solid var(--line-cream);padding:40px}
+.deal-price{font-family:'Instrument Serif',serif;font-size:72px;line-height:1;letter-spacing:-.03em;margin-bottom:4px}
+.deal-price .cur{color:var(--brass-2)}
+.deal-price small{font-family:'Manrope';font-size:20px;color:rgba(244,238,227,.5);letter-spacing:0;font-weight:400}
+.deal-sub{font-size:13px;color:rgba(244,238,227,.5);margin-bottom:32px;letter-spacing:.06em}
+.deal-rows{border-top:1px solid var(--line-cream)}
+.deal-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(244,238,227,.06)}
+.deal-row .dr-l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,238,227,.45);font-weight:600}
+.deal-row .dr-v{font-family:'Instrument Serif',serif;font-size:20px;color:var(--cream)}
+.deal-highlight{background:var(--brass-2);color:var(--ink);padding:16px 24px;margin-top:24px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+
+/* ===== FACILITIES ===== */
+.fac-section{background:var(--cream);padding:80px 48px}
+.fac-wrap{max-width:1440px;margin:0 auto}
+.fac-section-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-.02em;margin-bottom:48px}
+.fac-section-title em{font-style:italic;color:var(--brass)}
+.fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fac-item{border-top:2px solid var(--ink);padding-top:18px}
+.fac-item .fi-cat{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:8px}
+.fac-item .fi-title{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.1;margin-bottom:8px}
+.fac-item .fi-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* ===== CTA ===== */
+.cta{background:var(--paper);padding:100px 48px;border-top:1px solid var(--line)}
+.cta-wrap{max-width:800px;margin:0 auto;text-align:center}
+.cta h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+.cta h2 em{font-style:italic;color:var(--brass)}
+.cta p{font-size:17px;color:var(--muted);line-height:1.6;margin-bottom:40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{padding:16px 36px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:12px}
+.btn-primary{background:var(--brass-2);color:var(--ink)}
+.btn-primary:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.cta-nda{font-size:12px;color:var(--muted);margin-top:24px;letter-spacing:.08em}
+
+/* ===== FOOTER MINI ===== */
+footer{background:var(--ink);color:rgba(244,238,227,.6);padding:40px 48px}
+.foot-row{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.foot-row a{color:var(--brass-2)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .topbar{padding:16px 24px}
+  .hero-content{padding:0 24px 48px}
+  .hero-stats{gap:24px;flex-wrap:wrap}
+  .intro-grid{grid-template-columns:1fr;gap:40px}
+  .gallery-wrap{padding:0 24px}
+  .invest-grid{grid-template-columns:1fr;gap:48px}
+  .invest{padding:72px 24px}
+  .fac-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .fac-section,.cta{padding:64px 24px}
+  footer{padding:32px 24px}
+  .gl-hero-grid .g-hero{aspect-ratio:4/3}
+  .gl-hero-grid .g-row-3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .fac-grid{grid-template-columns:1fr}
+  .gl-grid{grid-template-columns:1fr}
+  .gl-grid .g-cell.wide{grid-column:span 1;aspect-ratio:4/3}
+  .gl-hero-grid .g-row-3{grid-template-columns:1fr}
+  .gl-hero-grid .g-row-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="topbar" id="topbar">
+  <a href="../index.html" class="logo">
+    <span class="logo-mark">C</span>
+    <span class="logo-text">CIM Hotel Solutions<span>Est. Brokerage · Europe · MENA</span></span>
+  </a>
+  <a href="../index.html" class="back-link">← Back to Portfolio</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Luxury Golf Resort · For Sale · Marbella, Spain</div>
+    <h1 class="hero-title">Villa Padierna<br/><em>Palace Hotel</em></h1>
+    <p class="hero-sub">A five-star palazzo on Marbella's Golden Mile — golf, beach club, spa and 149 keys of Anantara-managed luxury. One of Europe's most recognised resort assets.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n"><em>149</em></div><div class="l">Keys & Suites</div></div>
+      <div class="hero-stat"><div class="n">€<em>130</em>M</div><div class="l">Asking Price</div></div>
+      <div class="hero-stat"><div class="n"><em>★★★★★</em></div><div class="l">Category</div></div>
+      <div class="hero-stat"><div class="n"><em>3</em> Golf</div><div class="l">18-hole courses</div></div>
+      <div class="hero-stat"><div class="n"><em>2,700</em> m²</div><div class="l">Thermes Marins Spa</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO STRIP -->
+<section class="intro-strip">
+  <div class="intro-grid">
+    <p class="intro-text">
+      Set on <strong>250 hectares of landscaped estate</strong> on the Costa del Sol, Villa Padierna Palace is one of Andalucía's most distinguished addresses. The palazzo-style main building houses 149 rooms and suites — many with private terraces overlooking the golf course or Mediterranean. The asset is currently <strong>operated by Anantara (NH Group)</strong> under a long-term management agreement, delivering institutional-quality EBITDA with a global luxury brand in place.<br/><br/>
+      Three <strong>18-hole golf courses</strong>, the 2,700m² Thermes Marins spa, a private beach club 4 km away, six restaurants, ballroom and MICE facilities, and extensive sports infrastructure make this a rare complete resort offering in Western Europe.
+    </p>
+    <div class="key-facts">
+      <div class="key-fact"><span class="kf-label">Location</span><span class="kf-value">Benahavís, Marbella</span></div>
+      <div class="key-fact"><span class="kf-label">Keys</span><span class="kf-value">149 rooms & suites</span></div>
+      <div class="key-fact"><span class="kf-label">Asking Price</span><span class="kf-value">€130,000,000</span></div>
+      <div class="key-fact"><span class="kf-label">Deal Structure</span><span class="kf-value">Asset deal</span></div>
+      <div class="key-fact"><span class="kf-label">Operator</span><span class="kf-value">Anantara / NH Group</span></div>
+      <div class="key-fact"><span class="kf-label">Category</span><span class="kf-value">5★ GL</span></div>
+      <div class="key-fact"><span class="kf-label">Broker</span><span class="kf-value">Laurent Lassier</span></div>
+      <div class="key-fact"><span class="kf-label">Success Fee</span><span class="kf-value">1.0%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-wrap">
+    <nav class="gallery-tabs" id="galleryTabs">
+      <button class="gtab active" data-tab="exterior">Exterior &amp; Estate</button>
+      <button class="gtab" data-tab="rooms">Rooms &amp; Suites</button>
+      <button class="gtab" data-tab="spa">Spa &amp; Wellness</button>
+      <button class="gtab" data-tab="dining">Dining</button>
+      <button class="gtab" data-tab="events">Events &amp; MICE</button>
+      <button class="gtab" data-tab="beach">Beach Club</button>
+      <button class="gtab" data-tab="sport">Sport</button>
+    </nav>
+
+    <!-- EXTERIOR -->
+    <div class="gallery-layout gl-hero-grid active" id="tab-exterior" data-gallery="exterior">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/Exterior2.jpg" alt="Aerial estate view"/></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub" data-idx="1"><img src="../uploads/Garden.jpg" alt="Gardens"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Golf.jpg" alt="Golf course"/></div>
+        <div class="g-sub" data-idx="3"><img src="../uploads/outdoor%20Pool.jpg" alt="Outdoor Pool"/></div>
+      </div>
+      <div class="g-row g-row-3">
+        <div class="g-sub" data-idx="4"><img src="../uploads/Terrace.jpg" alt="Loggia terrace"/></div>
+        <div class="g-sub" data-idx="5"><img src="../uploads/Lobby.jpg" alt="Lobby bar"/></div>
+        <div class="g-sub" data-idx="6"><img src="../uploads/Exterior-afda2f22.jpg" alt="Hotel facade"/></div>
+      </div>
+    </div>
+
+    <!-- ROOMS -->
+    <div class="gallery-layout gl-hero-grid" id="tab-rooms" data-gallery="rooms">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/Private%20pool%20Room.jpg" alt="Private pool suite"/></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub" data-idx="1"><img src="../uploads/Room2-5947ee83.jpg" alt="Junior suite"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Room-def16832.jpg" alt="Deluxe room"/></div>
+        <div class="g-sub" data-idx="3"><img src="../uploads/Room3.jpg" alt="Private pool room"/></div>
+      </div>
+      <div class="g-row g-row-2">
+        <div class="g-sub" data-idx="4"><img src="../uploads/Bathroom.jpg" alt="Marble bathroom"/></div>
+        <div class="g-sub" data-idx="5"><img src="../uploads/Bathroom2.jpg" alt="Marble bathroom 2"/></div>
+      </div>
+    </div>
+
+    <!-- SPA -->
+    <div class="gallery-layout gl-hero-grid" id="tab-spa" data-gallery="spa">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/Indoor%20Pool.jpg" alt="Indoor Pool"/></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub" data-idx="1"><img src="../uploads/Spa.jpg" alt="Spa pool"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Spa2.jpg" alt="Spa pool 2"/></div>
+        <div class="g-sub" data-idx="3"><img src="../uploads/Fitness.jpg" alt="Fitness"/></div>
+      </div>
+    </div>
+
+    <!-- DINING -->
+    <div class="gallery-layout gl-hero-grid" id="tab-dining" data-gallery="dining">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/Reaturant%20terrace3.jpg" alt="Restaurant terrace evening"/></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub" data-idx="1"><img src="../uploads/Reaturant%20terrace.jpg" alt="Terrace dining"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Reaturant%20terrace2.jpg" alt="Terrace dining 2"/></div>
+        <div class="g-sub" data-idx="3"><img src="../uploads/Restaurant.jpg" alt="Restaurant interior"/></div>
+      </div>
+      <div class="g-row g-row-3">
+        <div class="g-sub" data-idx="4"><img src="../uploads/Restaurant2.jpg" alt="Restaurant 2"/></div>
+        <div class="g-sub" data-idx="5"><img src="../uploads/Reaturant%20terrace4.jpg" alt="Terrace day"/></div>
+        <div class="g-sub" data-idx="6"><img src="../uploads/Reaturant%20terrace5.jpg" alt="Terrace 5"/></div>
+      </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="gallery-layout gl-hero-grid" id="tab-events" data-gallery="events">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/BallRoom.jpg" alt="Ballroom"/></div>
+      <div class="g-row g-row-2">
+        <div class="g-sub" data-idx="1"><img src="../uploads/Meeting%20room.jpg" alt="Meeting room"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Bar%20terrace.jpg" alt="Bar terrace"/></div>
+      </div>
+    </div>
+
+    <!-- BEACH -->
+    <div class="gallery-layout gl-hero-grid" id="tab-beach" data-gallery="beach">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/Private%20Beach.jpg" alt="Private beach aerial"/></div>
+      <div class="g-row g-row-2">
+        <div class="g-sub" data-idx="1"><img src="../uploads/beach%20club.jpg" alt="Beach club dining"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Outdoor%20Pool2.jpg" alt="Pool garden"/></div>
+      </div>
+    </div>
+
+    <!-- SPORT -->
+    <div class="gallery-layout gl-hero-grid" id="tab-sport" data-gallery="sport">
+      <div class="g-hero" data-idx="0"><img class="g-img" src="../uploads/Sport%20facilities.jpg" alt="Tennis court"/></div>
+      <div class="g-row g-row-2">
+        <div class="g-sub" data-idx="1"><img src="../uploads/Sport%20facilities2.jpg" alt="Padel court"/></div>
+        <div class="g-sub" data-idx="2"><img src="../uploads/Fitness.jpg" alt="Fitness centre"/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT DETAILS -->
+<section class="invest">
+  <div class="invest-wrap">
+    <div class="invest-grid">
+      <div>
+        <div class="section-eyebrow">Investment Case</div>
+        <h2>The complete<br/><em>resort asset.</em></h2>
+        <p>Villa Padierna Palace represents one of the few truly complete luxury resort offerings in Southern Europe — an operating asset with a global brand, a proven track record, and irreplaceable real estate in one of Europe's most liquid high-net-worth leisure markets.</p>
+        <p>The Costa del Sol continues to outperform European hotel RevPAR benchmarks. International demand from DACH, Benelux, UK and GCC buyer groups makes this a natural fit for family offices and institutional leisure-hospitality funds seeking a trophy asset with operational upside.</p>
+        <p>Full Information Memorandum and financial data room available to qualified buyers under mutual NDA. On-site visits arranged by the broker.</p>
+      </div>
+      <div class="deal-card">
+        <div class="deal-price"><span class="cur">€</span>130<small>M</small></div>
+        <div class="deal-sub">Asking Price · Asset Deal</div>
+        <div class="deal-rows">
+          <div class="deal-row"><span class="dr-l">Per Key</span><span class="dr-v">€872,000</span></div>
+          <div class="deal-row"><span class="dr-l">Category</span><span class="dr-v">5★ Grand Luxe</span></div>
+          <div class="deal-row"><span class="dr-l">Keys</span><span class="dr-v">149 rooms & suites</span></div>
+          <div class="deal-row"><span class="dr-l">Operator</span><span class="dr-v">Anantara / NH Group</span></div>
+          <div class="deal-row"><span class="dr-l">Deal Type</span><span class="dr-v">Asset deal</span></div>
+          <div class="deal-row"><span class="dr-l">Broker Fee</span><span class="dr-v">1.0% on closing</span></div>
+          <div class="deal-row"><span class="dr-l">Target Yield</span><span class="dr-v">6–8% net p.a.</span></div>
+        </div>
+        <div class="deal-highlight">
+          <span>IM under NDA</span>
+          <span>→ Request access</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="fac-section">
+  <div class="fac-wrap">
+    <h2 class="fac-section-title">Complete resort<br/><em>infrastructure.</em></h2>
+    <div class="fac-grid">
+      <div class="fac-item">
+        <div class="fi-cat">Accommodation</div>
+        <div class="fi-title">149 Rooms & Suites</div>
+        <div class="fi-desc">Including private pool villas and panoramic golf-view suites. All marble bathrooms, private terraces.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Golf</div>
+        <div class="fi-title">3 × 18-Hole Courses</div>
+        <div class="fi-desc">Los Flamingos, Alferini and Tramores — championship layouts with sea and mountain views.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Spa</div>
+        <div class="fi-title">Thermes Marins · 2,700 m²</div>
+        <div class="fi-desc">Indoor & Roman pools, hydrotherapy, hammam, treatment rooms, fitness. Managed under Thermes Marins brand.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Beach</div>
+        <div class="fi-title">Private Beach Club</div>
+        <div class="fi-desc">Exclusive beach club 4 km away on the Costa del Sol. Restaurant, bar, sun-bed service and water sports.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Dining</div>
+        <div class="fi-title">6 Restaurants & Bars</div>
+        <div class="fi-desc">From fine-dining terraces with golf views to the tapestry-lined La Biblioteca room. Bar, lobby lounge and pool bar.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Events</div>
+        <div class="fi-title">MICE · Ballroom · Boardroom</div>
+        <div class="fi-desc">Grand ballroom for up to 800 pax, 7 meeting rooms, outdoor event terraces. Leading wedding and conference destination.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Sport</div>
+        <div class="fi-title">Tennis, Padel & Fitness</div>
+        <div class="fi-desc">Floodlit tennis and padel courts, professional fitness centre. Cycling, horse-riding and hiking programmes.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Location</div>
+        <div class="fi-title">Benahavís — Golden Mile</div>
+        <div class="fi-desc">45 min from Málaga Airport. Adjacent to La Quinta, La Zagaleta and other ultra-prime residential estates.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-wrap">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:16px">Request Mandate · One conversation away</div>
+    <h2>Ready to discuss<br/><em>Villa Padierna?</em></h2>
+    <p>Contact Laurent Lassier directly. Information Memorandum and data room access available under mutual NDA for qualified institutional buyers.</p>
+    <div class="cta-btns">
+      <a href="mailto:laurent.lassier@cimhotel.pro?subject=Villa Padierna — Buyer Inquiry" class="btn btn-primary">Contact Laurent Lassier <span style="font-family:'Instrument Serif';font-style:italic">→</span></a>
+      <a href="mailto:iulian.racanel@cimhotel.pro?subject=Villa Padierna — Buyer Inquiry" class="btn btn-ghost">Contact Iulian Racanel</a>
+    </div>
+    <p class="cta-nda">All information is confidential. Full IM and financials available under NDA to qualified buyers only.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-row">
+    <div>© 2026 CIM Hotel Solutions · LKMB Capital</div>
+    <div><a href="mailto:laurent.lassier@cimhotel.pro">laurent.lassier@cimhotel.pro</a></div>
+    <div>Vienna · Marbella · Dubai</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <button class="lb-prev" id="lbPrev">‹</button>
+  <div class="lb-img-wrap">
+    <img class="lb-img" id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""/>
+  </div>
+  <button class="lb-next" id="lbNext">›</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script>
+// Nav scroll
+const topbar = document.getElementById('topbar');
+window.addEventListener('scroll', () => {
+  topbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Gallery tabs
+const tabs = document.querySelectorAll('.gtab');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.gallery-layout').forEach(l => l.classList.remove('active'));
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+// Lightbox
+let currentImages = [];
+let currentIndex = 0;
+
+function buildImageList(galleryEl) {
+  const imgs = galleryEl.querySelectorAll('img');
+  return Array.from(imgs).map(img => ({src: img.src, alt: img.alt}));
+}
+
+function openLightbox(galleryId, idx) {
+  const galleryEl = document.getElementById('tab-' + galleryId);
+  currentImages = buildImageList(galleryEl);
+  currentIndex = idx;
+  showLbImage();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function showLbImage() {
+  const item = currentImages[currentIndex];
+  document.getElementById('lbImg').src = item.src;
+  document.getElementById('lbImg').alt = item.alt;
+  document.getElementById('lbCounter').textContent = (currentIndex + 1) + ' / ' + currentImages.length;
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbPrev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  showLbImage();
+});
+document.getElementById('lbNext').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  showLbImage();
+});
+document.getElementById('lightbox').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length; showLbImage(); }
+  if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % currentImages.length; showLbImage(); }
+});
+
+// Attach click handlers to gallery items
+document.querySelectorAll('.gallery-layout').forEach(layout => {
+  const galleryId = layout.id.replace('tab-', '');
+  const imgs = layout.querySelectorAll('img');
+  imgs.forEach((img, idx) => {
+    img.parentElement.addEventListener('click', () => openLightbox(galleryId, idx));
+    img.parentElement.style.cursor = 'pointer';
+  });
+});
+</script>
+</body>
+</html>

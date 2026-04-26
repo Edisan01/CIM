@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CIM Hotel Solutions — Hotel Investment Brokerage | Europe · Middle East · Egypt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#0E1B2C">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0E1B2C"/>
+    <rect x="420" y="260" width="360" height="360" fill="none" stroke="#D4A857" stroke-width="3"/>
+    <text x="600" y="480" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="240" fill="#D4A857">C</text>
+    <text x="600" y="690" text-anchor="middle" font-family="sans-serif" font-size="28" letter-spacing="8" fill="#F4EEE3">CIM HOTEL SOLUTIONS</text>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1B2C;
+    --ink-2:#18273B;
+    --cream:#F4EEE3;
+    --cream-2:#EAE2D2;
+    --paper:#FBF8F2;
+    --brass:#B8873F;
+    --brass-2:#D4A857;
+    --rust:#8B3A1D;
+    --line:rgba(14,27,44,0.12);
+    --line-cream:rgba(244,238,227,0.18);
+    --muted:#5A6677;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  /* ========== NAV ========== */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(14,27,44,0.0);transition:background .3s,backdrop-filter .3s}
+  .nav.scrolled{background:rgba(14,27,44,0.92);backdrop-filter:blur(14px);padding:16px 48px;border-bottom:1px solid var(--line-cream)}
+  .logo{display:flex;align-items:center;gap:12px;color:var(--cream)}
+  .logo-mark{width:34px;height:34px;border:1px solid var(--brass-2);display:grid;place-items:center;font-family:'Instrument Serif',serif;font-size:20px;color:var(--brass-2)}
+  .logo-text{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:0.02em}
+  .logo-text .sub{display:block;font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--brass-2);margin-top:2px;font-weight:500}
+  .nav-links{display:flex;gap:36px;align-items:center}
+  .nav-links a{color:var(--cream);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;opacity:.85;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{padding:10px 22px;border:1px solid var(--brass-2);color:var(--brass-2) !important;opacity:1 !important;transition:background .2s,color .2s}
+  .nav-cta:hover{background:var(--brass-2);color:var(--ink) !important}
+
+  /* ========== HERO ========== */
+  .hero{min-height:100vh;background:var(--ink);color:var(--cream);position:relative;overflow:hidden;padding:140px 48px 80px}
+  .hero::before{content:"";position:absolute;inset:0;background-image:url('images/turkey-hotel-pool.jpg');background-size:cover;background-position:center;opacity:0.18;filter:grayscale(0.3)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.7) 0%,rgba(14,27,44,0.95) 100%)}
+  .hero > *{position:relative;z-index:2}
+  .hero-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;min-height:calc(100vh - 220px)}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin-bottom:32px}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--brass-2)}
+  h1.display{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(56px,7vw,108px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:32px}
+  h1.display em{font-style:italic;color:var(--brass-2)}
+  .hero-lede{font-size:19px;line-height:1.6;color:rgba(244,238,227,0.75);max-width:540px;margin-bottom:48px;font-weight:300}
+  .hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .btn{padding:16px 32px;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:12px}
+  .btn-primary{background:var(--brass-2);color:var(--ink)}
+  .btn-primary:hover{background:var(--cream);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1px solid rgba(244,238,227,0.3)}
+  .btn-ghost:hover{border-color:var(--brass-2);color:var(--brass-2)}
+
+  /* Pros stack in hero */
+  .pros-stack{position:relative;height:560px}
+  .pro-card{position:absolute;width:280px;background:var(--ink-2);border:1px solid var(--line-cream);padding:24px;transition:transform .4s}
+  .pro-card:hover{transform:translateY(-6px)}
+  .pro-portrait{width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#2a3a52,#1a2638);margin-bottom:18px;position:relative;overflow:hidden;display:grid;place-items:center}
+  .pro-portrait .initials{font-family:'Instrument Serif',serif;font-size:88px;color:rgba(212,168,87,0.55);font-style:italic}
+  .pro-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,27,44,0.8) 100%)}
+  .pro-name{font-family:'Instrument Serif',serif;font-size:26px;line-height:1.1;margin-bottom:6px}
+  .pro-role{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass-2);font-weight:600}
+  .pro-card:nth-child(1){top:0;left:0;transform:rotate(-3deg)}
+  .pro-card:nth-child(2){top:40px;left:180px;transform:rotate(2deg);z-index:2}
+  .pro-card:nth-child(3){top:120px;left:360px;transform:rotate(-1deg)}
+  .pro-card:nth-child(1):hover{transform:rotate(-3deg) translateY(-6px)}
+  .pro-card:nth-child(2):hover{transform:rotate(2deg) translateY(-6px)}
+  .pro-card:nth-child(3):hover{transform:rotate(-1deg) translateY(-6px)}
+
+  /* Hero ticker */
+  .hero-ticker{position:absolute;bottom:0;left:0;right:0;border-top:1px solid var(--line-cream);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,238,227,0.6)}
+  .hero-ticker span strong{color:var(--brass-2);font-weight:600}
+  .hero-ticker .dot{width:6px;height:6px;background:#3CB371;border-radius:50%;display:inline-block;margin-right:8px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  /* ========== SECTION SHELL ========== */
+  section{padding:120px 48px;position:relative}
+  .wrap{max-width:1440px;margin:0 auto}
+  .section-head{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:80px;align-items:end}
+  .section-label{font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;gap:12px}
+  .section-label::before{content:"";width:24px;height:1px;background:var(--brass)}
+  .section-title{font-family:'Instrument Serif',serif;font-size:clamp(42px,5vw,72px);line-height:1;letter-spacing:-0.02em;margin-top:18px}
+  .section-title em{font-style:italic;color:var(--brass)}
+  .section-intro{font-size:18px;line-height:1.65;color:var(--muted);max-width:560px}
+
+  /* ========== TRUST BAR ========== */
+  .trust{background:var(--cream);padding:40px 48px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;align-items:center}
+  .trust-stat .num{font-family:'Instrument Serif',serif;font-size:54px;line-height:1;letter-spacing:-0.02em}
+  .trust-stat .num em{font-style:italic;color:var(--brass)}
+  .trust-stat .lbl{font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:500}
+
+  /* ========== PROS DETAIL ========== */
+  .pros-section{background:var(--paper)}
+  .pros-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .pro-detail{background:#fff;border:1px solid var(--line);padding:0;overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .pro-detail:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(14,27,44,0.08)}
+  .pro-detail-img{aspect-ratio:4/5;background:linear-gradient(135deg,#d4a857 0%,#8b6a2f 100%);position:relative;overflow:hidden;display:grid;place-items:center}
+  .pro-detail-img::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,0.15),transparent 60%)}
+  .pro-detail-img .big-initials{font-family:'Instrument Serif',serif;font-size:200px;color:rgba(255,255,255,0.22);line-height:1;font-style:italic}
+  .pro-detail-img .badge{position:absolute;top:24px;left:24px;background:var(--ink);color:var(--brass-2);padding:8px 14px;font-size:10px;letter-spacing:0.24em;text-transform:uppercase;font-weight:600;z-index:2}
+  .pro-detail-body{padding:32px}
+  .pro-detail-name{font-family:'Instrument Serif',serif;font-size:38px;line-height:1;margin-bottom:6px}
+  .pro-detail-role{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:24px}
+  .pro-bio{font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:24px}
+  .pro-stats{display:flex;gap:24px;border-top:1px solid var(--line);padding-top:20px}
+  .pro-stats div{flex:1}
+  .pro-stats .n{font-family:'Instrument Serif',serif;font-size:28px;line-height:1}
+  .pro-stats .l{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+  /* ========== MANIFESTO / ABOUT ========== */
+  .manifesto{background:var(--ink);color:var(--cream);padding:160px 48px}
+  .manifesto-inner{max-width:1100px;margin:0 auto}
+  .manifesto-quote{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,60px);line-height:1.15;letter-spacing:-0.01em}
+  .manifesto-quote em{color:var(--brass-2);font-style:italic}
+  .manifesto-meta{display:flex;gap:40px;align-items:center;margin-top:60px;padding-top:40px;border-top:1px solid var(--line-cream)}
+  .manifesto-meta .sig{font-family:'Instrument Serif',serif;font-style:italic;font-size:32px;color:var(--brass-2)}
+  .manifesto-meta .who{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(244,238,227,0.6)}
+
+  /* ========== SERVICE / FEE ========== */
+  .service{background:var(--cream);padding:120px 48px}
+  .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .fee-card{background:#fff;border:1px solid var(--line);padding:48px;position:relative}
+  .fee-card::before{content:"MANDATE";position:absolute;top:-12px;left:48px;background:var(--ink);color:var(--brass-2);padding:6px 14px;font-size:10px;letter-spacing:0.3em;font-weight:600}
+  .fee-head{border-bottom:1px solid var(--line);padding-bottom:32px;margin-bottom:32px}
+  .fee-range{font-family:'Instrument Serif',serif;font-size:80px;line-height:1;letter-spacing:-0.03em}
+  .fee-range .cur{color:var(--brass)}
+  .fee-range small{font-size:22px;color:var(--muted);font-family:'Manrope';font-weight:500;letter-spacing:0}
+  .fee-sub{font-size:14px;color:var(--muted);margin-top:12px}
+  .fee-list{list-style:none}
+  .fee-list li{padding:16px 0;border-bottom:1px dashed var(--line);display:grid;grid-template-columns:24px 1fr;gap:16px;align-items:start}
+  .fee-list li:last-child{border-bottom:none}
+  .fee-list .check{color:var(--brass);font-family:'Instrument Serif',serif;font-size:22px;font-style:italic;line-height:1}
+  .fee-list strong{display:block;font-size:15px;margin-bottom:2px;font-weight:600}
+  .fee-list span{font-size:13px;color:var(--muted);line-height:1.5}
+
+  .service-copy h3{font-family:'Instrument Serif',serif;font-size:48px;line-height:1.05;margin-bottom:24px;letter-spacing:-0.02em}
+  .service-copy h3 em{font-style:italic;color:var(--brass)}
+  .service-copy p{font-size:17px;line-height:1.7;color:var(--muted);margin-bottom:20px}
+  .service-copy .pullquote{border-left:2px solid var(--brass);padding:8px 0 8px 24px;margin:32px 0;font-family:'Instrument Serif',serif;font-size:24px;line-height:1.3;color:var(--ink);font-style:italic}
+
+  /* ========== PORTFOLIO ========== */
+  .portfolio{background:var(--paper);padding:120px 0}
+  .portfolio .wrap{padding:0 48px}
+  .portfolio-filters{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:24px}
+  .filter{padding:10px 20px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--muted);transition:all .2s}
+  .filter:hover{border-color:var(--ink);color:var(--ink)}
+  .filter.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .filter .count{opacity:.5;margin-left:6px;font-weight:400}
+
+  .hotels-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+  .hotel{background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .3s,box-shadow .3s;display:grid;grid-template-columns:280px 1fr}
+  .hotel:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(14,27,44,0.1)}
+  .hotel-img{position:relative;background:linear-gradient(135deg,#2a3a52,#0e1b2c);overflow:hidden;min-height:280px}
+  .hotel-img .pattern{position:absolute;inset:0;opacity:.4;background-size:cover;background-position:center}
+  .hotel-img .stars{position:absolute;top:16px;left:16px;color:var(--brass-2);font-size:14px;letter-spacing:2px;z-index:2;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+  .hotel-img .status{position:absolute;bottom:16px;left:16px;background:var(--cream);color:var(--ink);padding:6px 10px;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;font-weight:700;z-index:2}
+  .hotel-img .status.lease{background:var(--brass-2)}
+  .hotel-img .country{position:absolute;top:16px;right:16px;color:var(--cream);font-size:10px;letter-spacing:0.24em;text-transform:uppercase;font-weight:600;z-index:2}
+  .hotel-body{padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between}
+  .hotel-type{font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:8px}
+  .hotel-name{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05;letter-spacing:-0.01em;margin-bottom:4px}
+  .hotel-city{font-size:14px;color:var(--muted);margin-bottom:20px}
+  .hotel-city::before{content:"◆ ";color:var(--brass);font-size:10px}
+  .hotel-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .hotel-meta div .n{font-family:'Instrument Serif',serif;font-size:22px;line-height:1}
+  .hotel-meta div .l{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;font-weight:600}
+  .hotel-facilities{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:16px}
+  .hotel-footer{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .hotel-footer .agents{color:var(--brass)}
+  .hotel-footer a.view{color:var(--ink);border-bottom:1px solid var(--brass);padding-bottom:2px}
+
+  /* ========== MAP / COVERAGE ========== */
+  .coverage{background:var(--ink);color:var(--cream);padding:140px 48px}
+  .coverage-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+  .cities-list{display:grid;grid-template-columns:1fr 1fr;gap:2px 40px}
+  .city{padding:14px 0;border-bottom:1px solid var(--line-cream);display:flex;justify-content:space-between;align-items:baseline;font-family:'Instrument Serif',serif;font-size:24px;transition:color .2s;cursor:default}
+  .city:hover{color:var(--brass-2)}
+  .city .count{font-family:'Manrope';font-size:11px;letter-spacing:0.2em;color:rgba(244,238,227,0.5);font-weight:500}
+
+  .map-viz{aspect-ratio:4/3;background:var(--ink-2);border:1px solid var(--line-cream);position:relative;overflow:hidden}
+  .map-viz svg{width:100%;height:100%}
+
+  /* ========== CTA ========== */
+  .cta{background:var(--paper);padding:140px 48px;border-top:1px solid var(--line)}
+  .cta-inner{max-width:1100px;margin:0 auto;text-align:center}
+  .cta h2{font-family:'Instrument Serif',serif;font-size:clamp(48px,6vw,96px);line-height:1;letter-spacing:-0.02em;margin-bottom:32px}
+  .cta h2 em{font-style:italic;color:var(--brass)}
+  .cta p{font-size:20px;color:var(--muted);max-width:640px;margin:0 auto 48px;line-height:1.6}
+  .cta-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto 24px;text-align:left}
+  .cta-form .field{display:flex;flex-direction:column;gap:6px}
+  .cta-form .field.full{grid-column:span 2}
+  .cta-form label{font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .cta-form input,.cta-form select,.cta-form textarea{padding:14px 0;border:none;border-bottom:1px solid var(--line);background:transparent;font-family:inherit;font-size:15px;color:var(--ink);outline:none;transition:border-color .2s}
+  .cta-form input:focus,.cta-form select:focus,.cta-form textarea:focus{border-bottom-color:var(--brass)}
+  .cta-form textarea{resize:none;min-height:80px}
+  .cta-form .submit-row{grid-column:span 2;display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+  .cta-fine{font-size:12px;color:var(--muted);max-width:380px}
+
+  /* ========== FOOTER ========== */
+  footer{background:var(--ink);color:rgba(244,238,227,0.7);padding:64px 48px 40px}
+  .foot-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:48px}
+  .foot-logo .logo-text{color:var(--cream)}
+  .foot-blurb{font-size:13px;line-height:1.6;margin-top:20px;max-width:320px}
+  footer h4{font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin-bottom:20px}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:10px;font-size:13px}
+  footer ul li a:hover{color:var(--brass-2)}
+  .foot-bottom{max-width:1440px;margin:0 auto;padding-top:32px;border-top:1px solid var(--line-cream);display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,238,227,0.5)}
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px){
+    .hero-grid{grid-template-columns:1fr;gap:60px}
+    .pros-stack{height:440px;max-width:580px}
+    .service-grid{grid-template-columns:1fr;gap:48px}
+    .pros-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+    .hotels-grid{grid-template-columns:1fr}
+    .coverage-grid{grid-template-columns:1fr}
+    .trust-grid{grid-template-columns:repeat(2,1fr)}
+    .section-head{grid-template-columns:1fr;gap:24px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:40px}
+    .nav{padding:18px 24px}
+    .nav-links{display:none}
+    section, .manifesto, .coverage, .cta, .service, .hero{padding-left:24px;padding-right:24px}
+    .hero{padding-top:100px}
+    .hero-ticker{padding:18px 24px;flex-direction:column;gap:10px;font-size:10px}
+    .hotel{grid-template-columns:1fr}
+    .cta-form{grid-template-columns:1fr}
+    .cta-form .field.full, .cta-form .submit-row{grid-column:span 1}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="logo">
+    <span class="logo-mark">C</span>
+    <span class="logo-text">CIM Hotel Solutions<span class="sub">Est. Brokerage · Europe · MENA</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#team">The Team</a>
+    <a href="#service">Mandate</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#contact" class="nav-cta">Request Dossier</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">Hotel Investment Brokerage · Since 2000</div>
+      <h1 class="display">The right <em>tenant.</em><br/>The right <em>buyer.</em><br/>Within six months.</h1>
+      <p class="hero-lede">We place institutional capital into 3·4·5-star hotels and serviced apartments across Europe, the Middle East and Egypt. Three brokers. Twenty-five years on the floor. One mandate at a time.</p>
+      <div class="hero-ctas">
+        <a href="#portfolio" class="btn btn-primary">View Live Portfolio <span style="font-family:'Instrument Serif';font-style:italic">→</span></a>
+        <a href="#service" class="btn btn-ghost">How our mandate works</a>
+      </div>
+    </div>
+    <div class="pros-stack">
+      <article class="pro-card">
+        <div class="pro-portrait" style="background:url('uploads/team-laurent.jpg') center/cover no-repeat"></div>
+        <div class="pro-name">Laurent Lassier</div>
+        <div class="pro-role">Senior Broker · France</div>
+      </article>
+      <article class="pro-card">
+        <div class="pro-portrait" style="background:url('uploads/team-julio.jpg') center/cover no-repeat"></div>
+        <div class="pro-name">Julio C. Marulanda</div>
+        <div class="pro-role">Business Partner · Iberia</div>
+      </article>
+      <article class="pro-card">
+        <div class="pro-portrait" style="background:url('uploads/team-iulian.jpg') center/cover no-repeat"></div>
+        <div class="pro-name">Iulian Racanel</div>
+        <div class="pro-role">Business Partner · DACH & MENA</div>
+      </article>
+    </div>
+  </div>
+  <div class="hero-ticker">
+    <span><span class="dot"></span>14 active mandates · €410M volume currently placed</span>
+    <span>Annual yield target <strong>6–8%</strong></span>
+    <span>Updated 24 · 03 · 2026</span>
+  </div>
+</header>
+
+<!-- TRUST BAR -->
+<section class="trust" style="padding-top:40px;padding-bottom:40px">
+  <div class="trust-grid">
+    <div class="trust-stat"><div class="num"><em>25</em>+</div><div class="lbl">Years in hospitality</div></div>
+    <div class="trust-stat"><div class="num">€<em>368</em>M</div><div class="lbl">Live transaction volume</div></div>
+    <div class="trust-stat"><div class="num"><em>11</em></div><div class="lbl">Countries active</div></div>
+    <div class="trust-stat"><div class="num"><em>6</em> mo.</div><div class="lbl">Average time-to-close</div></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="pros-section" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">The Team</div>
+        <h2 class="section-title">Three brokers.<br/><em>One handshake.</em></h2>
+      </div>
+      <p class="section-intro">Hotel deals don't close on listings. They close on trust, language fluency, and twenty-five years of institutional Rolodex. Meet the desk.</p>
+    </div>
+
+    <div class="pros-grid">
+      <article class="pro-detail">
+        <div class="pro-detail-img" style="background:url('uploads/team-laurent.jpg') center/cover no-repeat">
+          <span class="badge">Owner & C.E.O.</span>
+        </div>
+        <div class="pro-detail-body">
+          <div class="pro-detail-name">Laurent Lassier</div>
+          <div class="pro-detail-role">Owner & C.E.O.</div>
+          <p class="pro-bio">25 years of experience in all operational fields of hospitality and F&amp;B. Expert in sales, acquisitions and transactions, operator search, repositioning and asset management.</p>
+          <div class="pro-stats">
+            <div><div class="n">25y</div><div class="l">Experience</div></div>
+            <div><div class="n" style="font-size:14px;letter-spacing:0"><a href="/cdn-cgi/l/email-protection#6e020f1b1c0b001a40020f1d1d070b1c2e0d070306011a0b02401e1c01" style="border-bottom:1px solid var(--brass)">laurent.lassier<br/>@cimhotel.pro</a></div><div class="l">Direct</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pro-detail">
+        <div class="pro-detail-img" style="background:url('uploads/team-julio.jpg') center/cover no-repeat">
+          <span class="badge" style="color:#d4a857">Business Partner</span>
+        </div>
+        <div class="pro-detail-body">
+          <div class="pro-detail-name">Julio César Marulanda</div>
+          <div class="pro-detail-role">Business Partner</div>
+          <p class="pro-bio">25+ years of experience in real estate, business development and hotel transactions. Runs the Iberian Peninsula desk and sources institutional buyers across Southern Europe and LATAM.</p>
+          <div class="pro-stats">
+            <div><div class="n">25+ y</div><div class="l">Experience</div></div>
+            <div><div class="n" style="font-size:14px;letter-spacing:0"><a href="/cdn-cgi/l/email-protection#660c130a0f09480b0714130a0708020726050f0b0e0912030a48161409" style="border-bottom:1px solid var(--brass)">julio.marulanda<br/>@cimhotel.pro</a></div><div class="l">Direct</div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pro-detail">
+        <div class="pro-detail-img" style="background:url('uploads/team-iulian.jpg') center/cover no-repeat">
+          <span class="badge">Business Partner</span>
+        </div>
+        <div class="pro-detail-body">
+          <div class="pro-detail-name">Iulian Racanel</div>
+          <div class="pro-detail-role">Business Partner · Senior Investment Advisor</div>
+          <p class="pro-bio">25+ years of experience in real estate, senior investment advisory, business development and hotel transactions. Owns the DACH, CEE, Middle East and Egypt buyer list — family offices, institutional funds and operator-led groups from Vienna to Abu Dhabi.</p>
+          <div class="pro-stats">
+            <div><div class="n">25+ y</div><div class="l">Experience</div></div>
+            <div><div class="n" style="font-size:14px;letter-spacing:0"><a href="/cdn-cgi/l/email-protection#422b372e2b232c6c302321232c272e02212b2f2a2d36272e6c32302d" style="border-bottom:1px solid var(--brass)">iulian.racanel<br/>@cimhotel.pro</a></div><div class="l">Direct</div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="manifesto-inner">
+    <p class="manifesto-quote">"A hotel is not a spreadsheet. It's 73 keys, a restaurant, a ten-year lease, a liquor license and the chef who has been there since 2004. <em>We sell all of it, or none of it.</em> That's what twenty-five years taught us."</p>
+    <div class="manifesto-meta">
+      <div class="sig">Iulian Racanel</div>
+      <div class="who">Business Partner · CIM Hotel Solutions</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE / FEE -->
+<section class="service" id="service">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Mandate & Fee</div>
+        <h2 class="section-title">A broker who<br/><em>earns the phone call.</em></h2>
+      </div>
+      <p class="section-intro">We don't chase listings for free. You sign a six-month exclusive mandate with a monthly retainer. In exchange: the institutional buyer network, the full deal process, and the closing — usually before the six months are up.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="fee-card">
+        <div class="fee-head">
+          <div class="fee-range"><span class="cur">€</span>1,000<small> – </small>3,500<small> / mo</small></div>
+          <div class="fee-sub">Monthly retainer · 6-month exclusive contract · Success fee on close</div>
+        </div>
+        <ul class="fee-list">
+          <li><span class="check">i</span><div><strong>Tiered monthly retainer</strong><span>€1,000–€3,500 based on asset class, price band and geography. Covers the real cost of running your mandate.</span></div></li>
+          <li><span class="check">ii</span><div><strong>Six-month exclusivity</strong><span>One broker. One contract. One line of accountability. No shopped deals, no leaks.</span></div></li>
+          <li><span class="check">iii</span><div><strong>Success fee on close</strong><span>Typically 1.0–4.0% of asset deal · 1 month of lease for lease agreements. Fully disclosed up front.</span></div></li>
+          <li><span class="check">iv</span><div><strong>Institutional buyer access</strong><span>Family offices, hotel funds, REITs, operator-led groups across EU · GCC · Egypt.</span></div></li>
+          <li><span class="check">v</span><div><strong>Full transaction stack</strong><span>Teaser, IM, data room, site visits, LOI negotiation, SPA coordination. You stay focused on your business.</span></div></li>
+        </ul>
+      </div>
+
+      <div class="service-copy">
+        <h3>Why the <em>retainer?</em></h3>
+        <p>A hotel mandate takes six months of our calendar. Pitchbooks, flights, notary calls, buyer introductions, data room curation, operator background checks, lease term renegotiation. That time has a cost, and a broker who works for free is a broker who isn't working.</p>
+        <p>The retainer aligns us. You get a desk that picks up the phone, flies to site, and stays on it until the ink is dry. We get the room to do the job properly — without cutting corners or chasing tyre-kickers.</p>
+        <div class="pullquote">"I'm a broker. I don't run around for free. I run because the mandate is signed and the buyer is real."</div>
+        <p><strong style="color:var(--ink);font-weight:700">Target yield for all mandated assets: 6–8% net per annum.</strong> Below that, we don't list it. Above that, we close it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Live Portfolio · Q1 2026</div>
+        <h2 class="section-title">Fourteen mandates.<br/><em>€410M</em> currently on desk.</h2>
+      </div>
+      <p class="section-intro">The current live book. All figures reflect asking price and confirmed information as of the last owner call. Complete IMs and data rooms available to qualified buyers under NDA.</p>
+    </div>
+
+    <div class="portfolio-filters" id="filters">
+      <button class="filter active" data-filter="all">All <span class="count">16</span></button>
+      <button class="filter" data-filter="sale">For Sale <span class="count">12</span></button>
+      <button class="filter" data-filter="lease">For Lease <span class="count">4</span></button>
+      <button class="filter" data-filter="5">5★ <span class="count">4</span></button>
+      <button class="filter" data-filter="4">4★ <span class="count">9</span></button>
+      <button class="filter" data-filter="3">3★ <span class="count">2</span></button>
+      <button class="filter" data-filter="eu">Europe</button>
+      <button class="filter" data-filter="mena">MENA · Egypt</button>
+    </div>
+
+    <div class="hotels-grid" id="hotels"></div>
+  </div>
+</section>
+
+<!-- ADVISORY -->
+<section class="advisory" style="background:var(--paper);padding:120px 48px;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-label">Advisory Services</div>
+        <h2 class="section-title">Beyond <em>brokerage.</em></h2>
+      </div>
+      <p class="section-intro">Our experts and advisors have exceptional experience in the hotel business — from planning to development, operations to finance and investment. We help current and future hotel investors and owners maximise returns in this special asset class, with wide-ranging experience across Spain and the CEE region.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:64px">
+      <div style="border-top:2px solid var(--ink);padding-top:20px">
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;line-height:1;margin-bottom:12px">01</div>
+        <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Market & Feasibility</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.55">Site & project evaluation, competitive benchmarking, room & facility mix, forecasted P&L, operator interest and lease-term impact on project value.</p>
+      </div>
+      <div style="border-top:2px solid var(--ink);padding-top:20px">
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;line-height:1;margin-bottom:12px">02</div>
+        <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Property & Project Valuations</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.55">Portfolios, hotel companies, restaurants. Discounted-cashflow methods aligned with market trends and yield requirements.</p>
+      </div>
+      <div style="border-top:2px solid var(--ink);padding-top:20px">
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;line-height:1;margin-bottom:12px">03</div>
+        <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Tourism Planning & Development</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.55">Strategic planning for destinations, developers and governmental / tourism-promotion bodies. Concept-to-opening support.</p>
+      </div>
+      <div style="border-top:2px solid var(--ink);padding-top:20px">
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;line-height:1;margin-bottom:12px">04</div>
+        <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px">Spa & Wellness Consulting</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.55">Market & competitive analysis, budget, concept, size and operation. Optimisation and repositioning for existing facilities.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;padding-top:48px;border-top:1px solid var(--line)">
+      <div>
+        <div class="section-label">Primary Clients</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 40px">
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Institutional investors</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Private equity funds</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Listed real-estate companies</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Specialised hotel funds</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Family offices</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Developers</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Banks</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:22px;padding:10px 0;border-bottom:1px solid var(--line)">Tourism organisations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="coverage">
+  <div class="coverage-grid">
+    <div>
+      <div class="section-label" style="color:var(--brass-2)">Coverage</div>
+      <h2 class="section-title" style="color:var(--cream);margin-top:18px;margin-bottom:32px">The best hotels<br/>in <em>every</em> town.</h2>
+      <p style="color:rgba(244,238,227,0.7);font-size:17px;line-height:1.6;margin-bottom:40px">From Vienna's Ringstrasse to the Hurghada beachfront, Marbella's Golden Mile to Dubai's Jumeirah Village Circle — eleven countries, one desk.</p>
+      <div class="cities-list">
+        <div class="city">Vienna <span class="count">AT · 4</span></div>
+        <div class="city">Budapest <span class="count">HU · 2</span></div>
+        <div class="city">Marbella <span class="count">ES · 1</span></div>
+        <div class="city">Madrid <span class="count">ES · •</span></div>
+        <div class="city">Barcelona <span class="count">ES · •</span></div>
+        <div class="city">Málaga <span class="count">ES · •</span></div>
+        <div class="city">Valencia <span class="count">ES · 1</span></div>
+        <div class="city">Comarruga <span class="count">ES · 1</span></div>
+        <div class="city">Krems <span class="count">AT · 1</span></div>
+        <div class="city">Bucharest <span class="count">RO · •</span></div>
+        <div class="city">Hurghada <span class="count">EG · 1</span></div>
+        <div class="city">Dubai <span class="count">UAE · 2</span></div>
+        <div class="city">Abu Dhabi <span class="count">UAE · •</span></div>
+        <div class="city">+ more <span class="count">on request</span></div>
+      </div>
+    </div>
+    <div class="map-viz">
+      <svg viewBox="0 0 600 440" preserveAspectRatio="xMidYMid meet">
+        <!-- stylised europe+mena silhouette -->
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#D4A857" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#D4A857" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- grid -->
+        <g stroke="rgba(244,238,227,0.05)" stroke-width="0.5">
+          <line x1="0" y1="80" x2="600" y2="80"/>
+          <line x1="0" y1="160" x2="600" y2="160"/>
+          <line x1="0" y1="240" x2="600" y2="240"/>
+          <line x1="0" y1="320" x2="600" y2="320"/>
+          <line x1="100" y1="0" x2="100" y2="440"/>
+          <line x1="200" y1="0" x2="200" y2="440"/>
+          <line x1="300" y1="0" x2="300" y2="440"/>
+          <line x1="400" y1="0" x2="400" y2="440"/>
+          <line x1="500" y1="0" x2="500" y2="440"/>
+        </g>
+        <!-- abstract landmass blobs -->
+        <path d="M 80 120 Q 140 80 220 100 T 360 110 Q 420 90 470 140 L 460 200 Q 410 220 360 210 T 240 200 Q 160 220 110 190 Z" fill="rgba(244,238,227,0.06)" stroke="rgba(212,168,87,0.2)" stroke-width="1"/>
+        <path d="M 380 240 Q 440 230 500 260 Q 540 290 530 340 Q 470 360 420 340 Q 380 310 380 270 Z" fill="rgba(244,238,227,0.06)" stroke="rgba(212,168,87,0.2)" stroke-width="1"/>
+        <path d="M 170 260 Q 210 250 260 270 Q 270 310 230 320 Q 180 310 170 280 Z" fill="rgba(244,238,227,0.06)" stroke="rgba(212,168,87,0.2)" stroke-width="1"/>
+
+        <!-- connection lines -->
+        <g stroke="rgba(212,168,87,0.3)" stroke-width="0.6" fill="none" stroke-dasharray="2 3">
+          <line x1="290" y1="140" x2="230" y2="160"/>
+          <line x1="290" y1="140" x2="315" y2="145"/>
+          <line x1="290" y1="140" x2="180" y2="180"/>
+          <line x1="290" y1="140" x2="460" y2="270"/>
+          <line x1="290" y1="140" x2="210" y2="285"/>
+          <line x1="290" y1="140" x2="420" y2="225"/>
+        </g>
+
+        <!-- city pins -->
+        <g font-family="Manrope" font-size="9" font-weight="600" fill="#F4EEE3" letter-spacing="1">
+          <g><circle cx="290" cy="140" r="6" fill="#D4A857"/><circle cx="290" cy="140" r="12" fill="url(#glow)"/><text x="300" y="144">VIENNA</text></g>
+          <g><circle cx="315" cy="145" r="4" fill="#D4A857"/><text x="322" y="149">BUDAPEST</text></g>
+          <g><circle cx="180" cy="180" r="4" fill="#D4A857"/><text x="188" y="184">MADRID</text></g>
+          <g><circle cx="230" cy="160" r="3" fill="#D4A857"/><text x="238" y="163">PARIS</text></g>
+          <g><circle cx="210" cy="185" r="3" fill="#D4A857"/><text x="180" y="198">BARCELONA</text></g>
+          <g><circle cx="175" cy="205" r="3" fill="#D4A857"/><text x="120" y="215">MÁLAGA/MARBELLA</text></g>
+          <g><circle cx="340" cy="170" r="3" fill="#D4A857"/><text x="348" y="173">BUCHAREST</text></g>
+          <g><circle cx="330" cy="230" r="4" fill="#D4A857"/><text x="340" y="234">HURGHADA</text></g>
+          <g><circle cx="420" cy="225" r="5" fill="#D4A857"/><circle cx="420" cy="225" r="10" fill="url(#glow)"/><text x="432" y="229">DUBAI</text></g>
+          <g><circle cx="410" cy="235" r="3" fill="#D4A857"/><text x="420" y="249">ABU DHABI</text></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="justify-content:center;margin-bottom:18px">Request a mandate</div>
+    <h2>Twenty-five years,<br/>one <em>conversation</em> away.</h2>
+    <p>Send us the asset or the buyer brief. We reply within 48 hours with a first read, a retainer proposal and — if the fit is right — a draft mandate on your desk inside the week.</p>
+    <form class="cta-form" onsubmit="event.preventDefault();alert('Thank you. Julian will be in touch within 48 hours.');">
+      <div class="field"><label>Name</label><input type="text" required placeholder="Your full name" /></div>
+      <div class="field"><label>Company / Fund</label><input type="text" placeholder="Optional" /></div>
+      <div class="field"><label>Email</label><input type="email" required placeholder="you@fund.com" /></div>
+      <div class="field"><label>Phone</label><input type="tel" placeholder="+43 ..." /></div>
+      <div class="field"><label>I am a</label>
+        <select><option>Hotel owner — seeking a buyer</option><option>Institutional buyer — seeking assets</option><option>Operator — seeking leases</option><option>Other</option></select>
+      </div>
+      <div class="field"><label>Region of interest</label>
+        <select><option>Europe — DACH</option><option>Europe — Iberia</option><option>Europe — CEE</option><option>Middle East — GCC</option><option>Egypt</option><option>All regions</option></select>
+      </div>
+      <div class="field full"><label>Brief</label><textarea placeholder="Asset type, keys, price band, timeline..."></textarea></div>
+      <div class="submit-row">
+        <p class="cta-fine">Submitting this form is non-binding. Monthly retainer ranges from €1,000 to €3,500 depending on asset class and geography. Six-month exclusive mandate on signature.</p>
+        <button type="submit" class="btn btn-primary">Send brief <span style="font-family:'Instrument Serif';font-style:italic">→</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-logo">
+      <a href="#" class="logo">
+        <span class="logo-mark">C</span>
+        <span class="logo-text">CIM Hotel Solutions<span class="sub">LKMB Capital · Est. Brokerage</span></span>
+      </a>
+      <p class="foot-blurb">Hotel investment brokerage. We place the right buyer with the right asset across Europe, the GCC and Egypt. Three brokers. Twenty-five years. One mandate at a time.</p>
+    </div>
+    <div>
+      <h4>Desk</h4>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#9ef2ffebecfbf0eab0f2ffededf7fbecdefdf7f3f6f1eafbf2b0eeecf1">Laurent Lassier</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#a6ccd3cacfc988cbc7d4d3cac7c8c2c7e6c5cfcbcec9d2c3ca88d6d4c9">Julio C. Marulanda</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#59302c35303837772b383a38373c35193a303431362d3c3577292b36">Iulian Racanel</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Coverage</h4>
+      <ul>
+        <li>Austria · Hungary · Romania</li>
+        <li>Spain · Portugal · France</li>
+        <li>UAE · Egypt · KSA</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#660f130a0f0708481407050708030a26050f0b0e0912030a48161409"><span class="__cf_email__" data-cfemail="8de4f8e1e4ece3a3ffeceeece3e8e1cdeee4e0e5e2f9e8e1a3fdffe2">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#84e8e5f1f6e1eaf0aae8e5f7f7ede1f6c4e7ede9ecebf0e1e8aaf4f6eb"><span class="__cf_email__" data-cfemail="3c505d494e59524812505d4f4f55594e7c5f55515453485950124c4e53">[email&#160;protected]</span></a></li>
+        <li>Vienna · Marbella · Dubai</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 CIM Hotel Solutions · LKMB Capital</div>
+    <div>All information subject to NDA · No reliance without signed mandate</div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// HOTELS DATA from PDF
+const HOTELS = [
+  {slug:"san-souci-wien", name:"Hotel San Souci Wien", stars:5, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Luxury Hotel", keys:63, price:60000000, deal:"Asset deal", fee:"3.0%", est:"€1,800,000", agents:"Laurent & Iulian", fac:"Prime Ringstrasse / MuseumsQuartier. €12M annual revenue. Gourmet restaurant, bar, spa, pool, fitness, MICE, underground parking.", img:"linear-gradient(135deg,#8b6a2f,#3a2a12)"},
+  {slug:"villa-padierna-marbella", name:"Villa Padierna Palace Hotel", stars:5, status:"sale", country:"Spain", city:"Marbella", region:"eu", type:"Luxury Golf Resort", keys:149, price:130000000, deal:"Asset deal", fee:"1.0%", est:"€1,300,000", agents:"Laurent", fac:"Managed by Anantara (NH Group). Golf, Beach Club, MICE, Spa, wellness, indoor & outdoor pools, gardens.", photo:"uploads/Exterior2.jpg"},
+  {slug:"hurghada-beachfront", name:"Beachfront Hurghada Hotel", stars:5, status:"sale", country:"Egypt", city:"Hurghada", region:"mena", type:"Beach Resort", keys:350, price:34000000, deal:"Turnkey asset deal", fee:"1.0%", est:"€340,000", agents:"Laurent & Iulian", fac:"Turnkey, operational-ready. As-is option at €24M. Eliminates construction/fit-out risk. Marina, private beach, palm-lined bay.", img:"linear-gradient(135deg,#0a4a6a,#062538)"},
+  {slug:"alanya-beach-resort", name:"Alanya Beach Resort Hotel", stars:5, status:"sale", country:"Turkey", city:"Alanya", region:"mena", type:"Beach Resort", keys:285, price:42000000, deal:"Asset deal", fee:"1.0%", est:"€420,000", agents:"Laurent & Iulian", fac:"Crescent-shaped seafront resort on the Turkish Riviera. Double pool, multiple F&B outlets, spa, conference centre, direct beach access. Turnkey operation.", img:"linear-gradient(135deg,#7a2a2a,#3a1010)"},
+  {slug:"amberlyn-suite-budapest", name:"The Amberlyn Suite Budapest", stars:4, status:"sale", country:"Hungary", city:"Budapest", region:"eu", type:"Suite Hotel / Aparthotel", keys:83, price:27000000, deal:"Asset deal", fee:"1.0%", est:"€270,000", agents:"Laurent & Iulian", fac:"83 fully furnished apartments + 46 parking. Studios to 100m² duplexes. Lobby bar, fitness, rooftop terrace. Palace District.", photo:"uploads/Penthouse.jpg"},
+  {slug:"h2-budapest", name:"H2 Hotel Budapest", stars:4, status:"sale", country:"Hungary", city:"Budapest", region:"eu", type:"City Hotel", keys:157, price:35000000, deal:"Asset deal", fee:"1.0%", est:"€350,000", agents:"Laurent & Iulian", fac:"Brand new. Top location. Restaurant, bar, terrace, indoor parking.", img:"linear-gradient(135deg,#2a4a6a,#0e1b2c)"},
+  {slug:"steigenberger-krems", name:"Hotel Steigenberger Krems", stars:4, status:"sale", country:"Austria", city:"Krems", region:"eu", type:"Mountain Resort", keys:173, price:29000000, deal:"Asset deal", fee:"1.0%", est:"€290,000", agents:"Laurent & Iulian", fac:"43 suites, 2,428m² spa, 7 conference rooms (324 pax), Cardea therapy centre, 140 parking spaces.", img:"linear-gradient(135deg,#4a5a3a,#1a2012)"},
+  {slug:"ibercity-schonbrunn", name:"Hotel Ibercity Wien Schönbrunn", stars:4, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Hotel", keys:118, price:25000000, deal:"Asset deal", fee:"1.0%", est:"€250,000", agents:"Laurent", fac:"Restaurant, bar, MICE, indoor & outdoor parking, fitness, business corner. Net lease to Ibersol Group until 2040.", photo:"uploads/Exterior-18a55c09.jpg"},
+  {slug:"mercure-raphael-wien", name:"Hotel Mercure Raphael Wien", stars:4, status:"sale", country:"Austria", city:"Vienna", region:"eu", type:"City Hotel", keys:78, price:14000000, deal:"Shares deal", fee:"1.0%", est:"€140,000", agents:"Laurent & Iulian", fac:"Directly at Westbahnhof station & Mariahilfer Straße. Bar, restaurant.", img:"linear-gradient(135deg,#6a5a4a,#2a201a)"},
+  {slug:"benetusser-valencia", name:"Benetusser Hotel", stars:4, status:"sale", country:"Spain", city:"Valencia · Benetússer", region:"eu", type:"City Hotel", keys:73, price:12800000, deal:"Asset deal", fee:"1.0%", est:"€128,000", agents:"Laurent", fac:"4★ in Huerta Sur, 7 min by train to Valencia centre, 15 min from airport. Restaurant, bar, parking (40), meeting room, laundry. Single-owner family business; 4.0 / Google · 7.6 / Booking. +20 keys expansion via adjacent building.", photo:"images/benetusser-exterior.jpg"},
+  {slug:"hotel-el-puntazo-mojacar", name:"Hotel El Puntazo Mojácar", stars:3, status:"sale", country:"Spain", city:"Mojácar, Almería", region:"eu", type:"Beachfront Hotel", keys:160, price:21780000, deal:"Asset deal", fee:"4.0%", est:"€871,200", agents:"Laurent", fac:"Beachfront, Paseo del Mediterráneo. Restaurant, bar, outdoor pool, sun terrace, parking. Direct beach access. Repositioning to 4★.", photo:"uploads/Exterior-a01e007c.jpg"},
+  {slug:"comarruga-platja", name:"Hotel Comarruga Platja", stars:3, status:"sale", country:"Spain", city:"Comarruga", region:"eu", type:"Beach Resort", keys:75, price:4350000, deal:"Asset deal", fee:"4.0%", est:"€174,000", agents:"Laurent", fac:"Restaurant, bar, outdoor pool, terrace, MICE (50 pax), parking. 100m from beach. Operator-free.", photo:"uploads/Exterior-2fdc4942.jpg"},
+  {slug:"j-haus-dubai", name:"J-Haus Residences Dubai", stars:0, status:"lease", country:"UAE", city:"Dubai · Jumeirah Village Circle", region:"mena", type:"Luxury Apartments", keys:179, price:11900000, deal:"9+9 Y lease", fee:"1 mo. of lease", est:"€991,667", agents:"Laurent & Iulian", fac:"Master-planned JVC community. Family-friendly, green spaces, Sheikh Mohammed Bin Zayed & Al Khail Road access.", img:"linear-gradient(135deg,#D4A857,#8b6a2f)"},
+  {slug:"production-city-dubai", name:"Production City Serviced Apts.", stars:0, status:"lease", country:"UAE", city:"Dubai · Jumeirah Village Circle", region:"mena", type:"Serviced Apartments", keys:396, price:8000000, deal:"20 Y lease", fee:"1 mo. of lease", est:"€666,667", agents:"Laurent & Iulian", fac:"Modern residential development. Efficient layouts for serviced-apartment operation. Business travellers, tourists, long-stay.", img:"linear-gradient(135deg,#b8873f,#6b4e1f)"},
+  {slug:"novotel-danube-budapest", name:"Novotel Danube Budapest", stars:4, status:"lease", country:"Hungary", city:"Budapest", region:"eu", type:"City Hotel", keys:175, price:2275000, deal:"20 Y lease", fee:"Owner mandate", est:"On request", agents:"Laurent", fac:"Restaurant, bar, parking, MICE, fitness, sauna.", img:"linear-gradient(135deg,#2a3a52,#0e1b2c)"},
+  {slug:"bellevue-vienna", name:"Hotel Bellevue Vienna", stars:4, status:"lease", country:"Austria", city:"Vienna", region:"eu", type:"City Hotel", keys:167, price:1703400, deal:"20 Y lease", fee:"1 mo. of lease", est:"€141,950", agents:"Laurent & Iulian", fac:"Bar, restaurant, conference & meeting rooms (200 pax), boardroom, parking.", img:"linear-gradient(135deg,#3a4a5a,#1a2028)"},
+];
+
+function fmtPrice(n){
+  if(n >= 1000000) return "€" + (n/1000000).toFixed(n%1000000===0?0:1) + "M";
+  return "€" + (n/1000).toFixed(0) + "k";
+}
+function stars(n){ return "★".repeat(n) + "☆".repeat(Math.max(0,5-n)); }
+
+function render(filter){
+  const grid = document.getElementById('hotels');
+  let items = HOTELS;
+  if(filter && filter !== "all"){
+    if(filter === "sale" || filter === "lease") items = items.filter(h => h.status === filter);
+    else if(filter === "eu" || filter === "mena") items = items.filter(h => h.region === filter);
+    else items = items.filter(h => h.stars === parseInt(filter));
+  }
+  grid.innerHTML = items.map(h => `
+    <article class="hotel" data-status="${h.status}" data-stars="${h.stars}" data-region="${h.region}">
+      <a href="teasers/${h.slug}.html" class="hotel-img" style="${h.photo ? `background-image:url('${h.photo}');background-size:cover;background-position:center;` : `background:${h.img};`}display:block;text-decoration:none">
+        ${h.photo ? '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.1) 0%,rgba(14,27,44,0.55) 100%)"></div>' : ''}
+        ${h.stars > 0 ? `<div class="stars">${stars(h.stars)}</div>` : ''}
+        <div class="country">${h.country}</div>
+        <div class="status ${h.status}">${h.status === 'sale' ? 'For Sale' : 'For Lease'}</div>
+      </a>
+      <div class="hotel-body">
+        <div>
+          <div class="hotel-type">${h.type}</div>
+          <h3 class="hotel-name"><a href="teasers/${h.slug}.html" style="border-bottom:1px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--brass)'" onmouseout="this.style.borderColor='transparent'">${h.name}</a></h3>
+          <div class="hotel-city">${h.city}</div>
+          <div class="hotel-meta">
+            <div><div class="n">${h.keys}</div><div class="l">Keys</div></div>
+            <div><div class="n">${fmtPrice(h.price)}</div><div class="l">${h.status === 'sale' ? 'Asking' : 'Annual'}</div></div>
+            <div><div class="n">${h.status === 'sale' ? fmtPrice(Math.round(h.price/h.keys)) : h.deal.replace(/\s?Y\s?lease.*/,'Y')}</div><div class="l">${h.status === 'sale' ? 'per key' : 'Term'}</div></div>
+          </div>
+          <div class="hotel-facilities">${h.fac}</div>
+        </div>
+        <div class="hotel-footer">
+          <div class="agents">${h.agents}</div>
+          <a class="view" href="teasers/${h.slug}.html">View teaser →</a>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+render('all');
+
+document.getElementById('filters').addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter');
+  if(!btn) return;
+  document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render(btn.dataset.filter);
+});
+</script>
+
+</body>
+</html>

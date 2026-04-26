@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hotel Comarruga Platja — Investment Teaser · CIM Hotel Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B2C;--ink-2:#18273B;--cream:#F4EEE3;--paper:#FBF8F2;
+  --brass:#B8873F;--brass-2:#D4A857;--line:rgba(14,27,44,0.12);
+  --line-cream:rgba(244,238,227,0.18);--muted:#5A6677;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(14,27,44,0);transition:background .3s,backdrop-filter .3s}
+.topbar.scrolled{background:rgba(14,27,44,0.92);backdrop-filter:blur(14px)}
+.logo{display:flex;align-items:center;gap:12px;color:var(--cream)}
+.logo-mark{width:32px;height:32px;border:1px solid var(--brass-2);display:grid;place-items:center;font-family:'Instrument Serif',serif;font-size:18px;color:var(--brass-2)}
+.logo-text{font-family:'Instrument Serif',serif;font-size:20px;letter-spacing:.02em}
+.logo-text small{display:block;font-family:'Manrope',sans-serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-2);margin-top:1px;font-weight:500}
+.back-link{color:var(--cream);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.7;transition:opacity .2s}
+.back-link:hover{opacity:1}
+
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-img{position:absolute;inset:0;background:url('../uploads/Exterior-2fdc4942.jpg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,27,44,0.3) 0%,rgba(14,27,44,0.0) 40%,rgba(14,27,44,0.0) 50%,rgba(14,27,44,0.9) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 48px 64px;color:var(--cream)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;margin-bottom:20px}
+.hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass-2)}
+.hero-title{font-family:'Instrument Serif',serif;font-size:clamp(44px,5.5vw,84px);line-height:.95;letter-spacing:-.02em;margin-bottom:16px}
+.hero-title em{font-style:italic;color:var(--brass-2)}
+.hero-sub{font-size:17px;color:rgba(244,238,227,.75);font-weight:300;max-width:540px;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;padding-top:24px;border-top:1px solid var(--line-cream);flex-wrap:wrap}
+.hero-stat .n{font-family:'Instrument Serif',serif;font-size:36px;line-height:1;letter-spacing:-.02em}
+.hero-stat .n em{color:var(--brass-2);font-style:normal}
+.hero-stat .l{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,238,227,.55);margin-top:6px;font-weight:600}
+
+.intro-strip{background:var(--ink);color:var(--cream);padding:48px}
+.intro-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:80px;align-items:start}
+.intro-text{font-size:18px;line-height:1.65;color:rgba(244,238,227,.8);font-weight:300}
+.intro-text strong{color:var(--cream);font-weight:600}
+.key-facts{display:flex;flex-direction:column}
+.key-fact{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line-cream)}
+.key-fact:first-child{border-top:1px solid var(--line-cream)}
+.key-fact .kf-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,238,227,.5);font-weight:600}
+.key-fact .kf-value{font-family:'Instrument Serif',serif;font-size:19px;color:var(--cream)}
+
+.gallery-section{background:var(--paper);padding:80px 0 100px}
+.gallery-wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.gallery-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.gallery-tabs::-webkit-scrollbar{display:none}
+.gtab{padding:14px 24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:pointer;border:none;background:transparent;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+.gtab:hover{color:var(--ink)}
+.gtab.active{color:var(--ink);border-bottom-color:var(--brass-2)}
+.gallery-layout{display:none}
+.gallery-layout.active{display:grid}
+.gl-hero-grid{gap:4px}
+.g-hero{aspect-ratio:16/7;overflow:hidden;cursor:pointer;margin-bottom:4px}
+.g-row{display:grid;gap:4px;margin-bottom:4px}
+.g-row-3{grid-template-columns:1fr 1fr 1fr}
+.g-row-2{grid-template-columns:1fr 1fr}
+.g-sub{aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.g-sub img,.g-hero img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.g-sub img:hover,.g-hero img:hover{transform:scale(1.04)}
+
+.invest{background:var(--ink);color:var(--cream);padding:100px 48px}
+.invest-wrap{max-width:1440px;margin:0 auto}
+.invest-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.invest-eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.invest-eyebrow::before{content:"";width:24px;height:1px;background:var(--brass-2)}
+.invest h2{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,60px);line-height:1.05;letter-spacing:-.02em;margin-bottom:32px}
+.invest h2 em{font-style:italic;color:var(--brass-2)}
+.invest p{font-size:16px;line-height:1.7;color:rgba(244,238,227,.7);margin-bottom:20px}
+.deal-card{background:var(--ink-2);border:1px solid var(--line-cream);padding:40px}
+.deal-price{font-family:'Instrument Serif',serif;font-size:68px;line-height:1;letter-spacing:-.03em;margin-bottom:4px}
+.deal-price .cur{color:var(--brass-2)}
+.deal-price small{font-family:'Manrope';font-size:18px;color:rgba(244,238,227,.5);letter-spacing:0;font-weight:400}
+.deal-sub{font-size:13px;color:rgba(244,238,227,.5);margin-bottom:32px;letter-spacing:.06em}
+.deal-rows{border-top:1px solid var(--line-cream)}
+.deal-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(244,238,227,.06)}
+.deal-row .dr-l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,238,227,.45);font-weight:600}
+.deal-row .dr-v{font-family:'Instrument Serif',serif;font-size:19px;color:var(--cream)}
+.deal-highlight{background:var(--brass-2);color:var(--ink);padding:16px 24px;margin-top:24px;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+
+.fac-section{background:var(--cream);padding:80px 48px}
+.fac-wrap{max-width:1440px;margin:0 auto}
+.fac-title{font-family:'Instrument Serif',serif;font-size:clamp(32px,3.5vw,52px);line-height:1;letter-spacing:-.02em;margin-bottom:48px}
+.fac-title em{font-style:italic;color:var(--brass)}
+.fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fac-item{border-top:2px solid var(--ink);padding-top:18px}
+.fac-item .fi-cat{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:700;margin-bottom:8px}
+.fac-item .fi-title{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.1;margin-bottom:8px}
+.fac-item .fi-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+.cta{background:var(--paper);padding:100px 48px;border-top:1px solid var(--line)}
+.cta-wrap{max-width:800px;margin:0 auto;text-align:center}
+.cta h2{font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+.cta h2 em{font-style:italic;color:var(--brass)}
+.cta p{font-size:17px;color:var(--muted);line-height:1.6;margin-bottom:40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{padding:16px 36px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;cursor:pointer;border:none;transition:all .25s;display:inline-flex;align-items:center;gap:12px}
+.btn-primary{background:var(--brass-2);color:var(--ink)}
+.btn-primary:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.cta-nda{font-size:12px;color:var(--muted);margin-top:24px}
+
+footer{background:var(--ink);color:rgba(244,238,227,.6);padding:40px 48px}
+.foot-row{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.foot-row a{color:var(--brass-2)}
+
+.lightbox{position:fixed;inset:0;background:rgba(14,27,44,.97);z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lb-img{max-width:90vw;max-height:82vh;object-fit:contain;display:block}
+.lb-close{position:fixed;top:24px;right:32px;color:var(--cream);font-size:28px;cursor:pointer;opacity:.7;background:none;border:none;line-height:1;transition:opacity .2s}
+.lb-close:hover{opacity:1}
+.lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);color:var(--cream);font-family:'Instrument Serif',serif;font-style:italic;font-size:48px;cursor:pointer;opacity:.6;background:none;border:none;padding:20px;line-height:1;user-select:none;transition:opacity .2s}
+.lb-prev:hover,.lb-next:hover{opacity:1}
+.lb-prev{left:12px}.lb-next{right:12px}
+.lb-counter{position:fixed;bottom:28px;color:rgba(244,238,227,.5);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+
+@media(max-width:1024px){
+  .topbar,.hero-content{padding-left:24px;padding-right:24px}
+  .intro-grid,.invest-grid{grid-template-columns:1fr;gap:40px}
+  .gallery-wrap,.invest,.fac-section,.cta,footer{padding-left:24px;padding-right:24px}
+  .fac-grid{grid-template-columns:1fr 1fr}
+  .g-row-3{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .fac-grid,.g-row-3,.g-row-2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar" id="topbar">
+  <a href="../index.html" class="logo">
+    <span class="logo-mark">C</span>
+    <span class="logo-text">CIM Hotel Solutions<small>Est. Brokerage · Europe · MENA</small></span>
+  </a>
+  <a href="../index.html" class="back-link">← Back to Portfolio</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Beach Hotel · For Sale · Costa Dorada, Spain</div>
+    <h1 class="hero-title">Hotel Comarruga<br/><em>Platja</em></h1>
+    <p class="hero-sub">A 75-key 3-star beach hotel 100 metres from Coma-Ruga beach on the Costa Dorada — 57 minutes from Barcelona, 30 minutes from PortAventura. Sold operator-free with full vacant possession.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n"><em>75</em></div><div class="l">Keys</div></div>
+      <div class="hero-stat"><div class="n">€<em>4.35</em>M</div><div class="l">Asking Price</div></div>
+      <div class="hero-stat"><div class="n"><em>★★★</em></div><div class="l">Category</div></div>
+      <div class="hero-stat"><div class="n">€<em>58k</em></div><div class="l">Per Key</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="intro-strip">
+  <div class="intro-grid">
+    <p class="intro-text">
+      Hotel Comarruga Platja is a <strong>fully operational beachfront hotel</strong> located at Av. Palfuriana, 115 in Coma-Ruga — a popular seaside town on the Costa Dorada, part of the Tarragona province. The hotel sits <strong>100 metres from the 7-km Coma-Ruga beach</strong>, in one of Catalonia's most visited summer tourist destinations.<br/><br/>
+      The asset is being sold <strong>operator-free with full vacant possession</strong> — ideal for an owner-operator or a buyer seeking to install their own management team. At <strong>€58,000 per key</strong>, it represents one of the most attractively priced beach hotel acquisitions on the Spanish Mediterranean coast, with immediate income potential and strategic proximity to two major demand generators: <strong>PortAventura World</strong> (30 min) and <strong>Barcelona</strong> (57 min).
+    </p>
+    <div class="key-facts">
+      <div class="key-fact"><span class="kf-label">Location</span><span class="kf-value">Coma-Ruga, Tarragona</span></div>
+      <div class="key-fact"><span class="kf-label">Address</span><span class="kf-value">Av. Palfuriana, 115</span></div>
+      <div class="key-fact"><span class="kf-label">Keys</span><span class="kf-value">75 rooms</span></div>
+      <div class="key-fact"><span class="kf-label">Category</span><span class="kf-value">3★</span></div>
+      <div class="key-fact"><span class="kf-label">Plot Area</span><span class="kf-value">1,527 m²</span></div>
+      <div class="key-fact"><span class="kf-label">Built Area</span><span class="kf-value">3,113 m²</span></div>
+      <div class="key-fact"><span class="kf-label">Asking Price</span><span class="kf-value">€4,350,000</span></div>
+      <div class="key-fact"><span class="kf-label">Commission</span><span class="kf-value">4% + VAT (buyer)</span></div>
+      <div class="key-fact"><span class="kf-label">Broker</span><span class="kf-value">Laurent Lassier</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="gallery-wrap">
+    <nav class="gallery-tabs" id="galleryTabs">
+      <button class="gtab active" data-tab="exterior">Exterior &amp; Views</button>
+      <button class="gtab" data-tab="dining">Dining &amp; Bar</button>
+      <button class="gtab" data-tab="rooms">Rooms &amp; Pool</button>
+    </nav>
+
+    <!-- EXTERIOR -->
+    <div class="gallery-layout gl-hero-grid active" id="tab-exterior">
+      <div class="g-hero"><img src="../uploads/Exterior-2fdc4942.jpg" alt="Hotel facade"/></div>
+      <div class="g-row g-row-3">
+        <div class="g-sub"><img src="../uploads/2Exterior.jpg" alt="Sea view from hotel"/></div>
+        <div class="g-sub"><img src="../uploads/Terrace-6e35d05f.jpg" alt="Courtyard terrace"/></div>
+        <div class="g-sub"><img src="../uploads/Outdoor%20Pool-06a6d148.jpg" alt="Outdoor pool"/></div>
+      </div>
+    </div>
+
+    <!-- DINING -->
+    <div class="gallery-layout gl-hero-grid" id="tab-dining">
+      <div class="g-hero"><img src="../uploads/Restaurant-fe9e9a62.jpg" alt="Restaurant"/></div>
+      <div class="g-row g-row-2">
+        <div class="g-sub"><img src="../uploads/Bar-a96d7f23.jpg" alt="Bar"/></div>
+        <div class="g-sub"><img src="../uploads/Terrace-6e35d05f.jpg" alt="Terrace dining"/></div>
+      </div>
+    </div>
+
+    <!-- ROOMS & POOL -->
+    <div class="gallery-layout gl-hero-grid" id="tab-rooms">
+      <div class="g-hero"><img src="../uploads/Outdoor%20Pool-06a6d148.jpg" alt="Outdoor pool"/></div>
+      <div class="g-row g-row-2">
+        <div class="g-sub"><img src="../uploads/Family%20Room.jpg" alt="Family room"/></div>
+        <div class="g-sub"><img src="../uploads/Exterior-2fdc4942.jpg" alt="Exterior"/></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="invest">
+  <div class="invest-wrap">
+    <div class="invest-grid">
+      <div>
+        <div class="invest-eyebrow">Investment Case</div>
+        <h2>Costa Dorada entry<br/><em>at replacement value.</em></h2>
+        <p>At €58,000 per key, Hotel Comarruga Platja is priced well below the cost of new construction on the Spanish Mediterranean coast — offering a buyer the option to acquire, refurbish and reposition at a fraction of the capex required to build new.</p>
+        <p>The Costa Dorada benefits from a powerful, diversified demand base: the 7-km Coma-Ruga beach drives domestic summer tourism, while PortAventura World (Europe's second-largest theme park) and the growing international visitor market provide year-round demand support. Barcelona Airport is within an hour's drive.</p>
+        <p>The hotel is sold operator-free — ideal for an owner-operator seeking a turnkey seasonal asset, or for an investor looking to install a franchise brand or independent concept with full operational control from day one.</p>
+      </div>
+      <div class="deal-card">
+        <div class="deal-price"><span class="cur">€</span>4.35<small>M</small></div>
+        <div class="deal-sub">Asking Price · Asset Deal · Operator-Free</div>
+        <div class="deal-rows">
+          <div class="deal-row"><span class="dr-l">Per Key</span><span class="dr-v">€58,000</span></div>
+          <div class="deal-row"><span class="dr-l">Category</span><span class="dr-v">3★</span></div>
+          <div class="deal-row"><span class="dr-l">Keys</span><span class="dr-v">75 rooms</span></div>
+          <div class="deal-row"><span class="dr-l">Plot Area</span><span class="dr-v">1,527 m²</span></div>
+          <div class="deal-row"><span class="dr-l">Built Area</span><span class="dr-v">3,113 m²</span></div>
+          <div class="deal-row"><span class="dr-l">Status</span><span class="dr-v">Operational</span></div>
+          <div class="deal-row"><span class="dr-l">Commission</span><span class="dr-v">4% + VAT (buyer)</span></div>
+        </div>
+        <div class="deal-highlight">
+          <span>IM on request</span>
+          <span>→ Contact broker</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fac-section">
+  <div class="fac-wrap">
+    <h2 class="fac-title">Fully equipped<br/><em>beach hotel.</em></h2>
+    <div class="fac-grid">
+      <div class="fac-item">
+        <div class="fi-cat">Accommodation</div>
+        <div class="fi-title">75 Rooms</div>
+        <div class="fi-desc">Including family rooms with bunk beds and balconies. Sea-view and pool-view options. All rooms with private bath.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Dining</div>
+        <div class="fi-title">Restaurant & Bar</div>
+        <div class="fi-desc">Full-service buffet restaurant. Bar with terrace seating in the palm-shaded courtyard. Recreation room.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Pool</div>
+        <div class="fi-title">Outdoor Pool</div>
+        <div class="fi-desc">Outdoor swimming pool with sun terrace and loungers. Children's pool. Private, walled garden setting.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Events</div>
+        <div class="fi-title">Meeting Room · 50 Pax</div>
+        <div class="fi-desc">Conference and meeting room for up to 50 persons. Suitable for groups, weddings and corporate retreats.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Parking</div>
+        <div class="fi-title">On-Site Parking</div>
+        <div class="fi-desc">Private parking on site — a key competitive advantage in peak-season Coma-Ruga.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Beach</div>
+        <div class="fi-title">100 m to Coma-Ruga Beach</div>
+        <div class="fi-desc">7-km sandy beach, one of the Costa Dorada's most popular. Blue Flag quality. Watersports and beach services.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Connectivity</div>
+        <div class="fi-title">57 min Barcelona · 30 min PortAventura</div>
+        <div class="fi-desc">Direct access to two of Europe's highest hotel demand generators. 7 min from El Vendrell. Easy motorway access.</div>
+      </div>
+      <div class="fac-item">
+        <div class="fi-cat">Deal</div>
+        <div class="fi-title">Operator-Free · Vacant Possession</div>
+        <div class="fi-desc">No existing lease or management agreement. Full control from day one. Ideal for owner-operator or rebrand.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-wrap">
+    <div style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass);font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:16px"><span style="display:inline-block;width:24px;height:1px;background:var(--brass)"></span>Request Information · CIM Hotel Solutions</div>
+    <h2>Interested in<br/><em>Comarruga Platja?</em></h2>
+    <p>Contact Laurent Lassier for full property details, financial history and site visit arrangements.</p>
+    <div class="cta-btns">
+      <a href="mailto:laurent.lassier@cimhotel.pro?subject=Hotel Comarruga Platja — Buyer Inquiry" class="btn btn-primary">Contact Laurent Lassier <span style="font-family:'Instrument Serif';font-style:italic">→</span></a>
+      <a href="mailto:iulian.racanel@cimhotel.pro?subject=Hotel Comarruga Platja — Buyer Inquiry" class="btn btn-ghost">Contact Iulian Racanel</a>
+    </div>
+    <p class="cta-nda">Commission: 4% + VAT payable by the buyer. All information subject to verification.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-row">
+    <div>© 2026 CIM Hotel Solutions · LKMB Capital</div>
+    <div><a href="mailto:laurent.lassier@cimhotel.pro">laurent.lassier@cimhotel.pro</a></div>
+    <div>Vienna · Marbella · Dubai</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <button class="lb-prev" id="lbPrev">‹</button>
+  <img class="lb-img" id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""/>
+  <button class="lb-next" id="lbNext">›</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script>
+const topbar = document.getElementById('topbar');
+window.addEventListener('scroll', () => topbar.classList.toggle('scrolled', window.scrollY > 60));
+
+document.querySelectorAll('.gtab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.gallery-layout').forEach(l => l.classList.remove('active'));
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  });
+});
+
+let currentImages = [], currentIndex = 0;
+function openLightbox(galleryId, idx) {
+  const el = document.getElementById('tab-' + galleryId);
+  currentImages = [...el.querySelectorAll('img')].map(i => ({src: i.src, alt: i.alt}));
+  currentIndex = idx; showLb();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function showLb() {
+  document.getElementById('lbImg').src = currentImages[currentIndex].src;
+  document.getElementById('lbCounter').textContent = (currentIndex+1) + ' / ' + currentImages.length;
+}
+function closeLb() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', () => { currentIndex=(currentIndex-1+currentImages.length)%currentImages.length; showLb(); });
+document.getElementById('lbNext').addEventListener('click', () => { currentIndex=(currentIndex+1)%currentImages.length; showLb(); });
+document.getElementById('lightbox').addEventListener('click', e => { if(e.target===e.currentTarget) closeLb(); });
+document.addEventListener('keydown', e => {
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key==='Escape') closeLb();
+  if(e.key==='ArrowLeft') { currentIndex=(currentIndex-1+currentImages.length)%currentImages.length; showLb(); }
+  if(e.key==='ArrowRight') { currentIndex=(currentIndex+1)%currentImages.length; showLb(); }
+});
+document.querySelectorAll('.gallery-layout').forEach(layout => {
+  const id = layout.id.replace('tab-','');
+  [...layout.querySelectorAll('img')].forEach((img, idx) => {
+    img.parentElement.style.cursor='pointer';
+    img.parentElement.addEventListener('click', () => openLightbox(id, idx));
+  });
+});
+</script>
+</body>
+</html>
